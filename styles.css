@@ -1,0 +1,134 @@
+/* styles.css */
+
+/* Base body styles (complementing Tailwind) */
+body {
+    font-family: 'Inter', sans-serif;
+    /* Tailwind classes bg-gray-900 and text-gray-100 are applied in HTML,
+       but you could set fallbacks or base colors here if desired. */
+    /* background-color: #111827; */
+    /* color: #F3F4F6; */
+}
+
+/* Navbar custom styles */
+.navbar {
+    background-color: rgba(17, 24, 39, 0.8); /* Slightly transparent dark background */
+    backdrop-filter: blur(10px);
+    border-bottom: 1px solid rgba(55, 65, 81, 0.5); /* Subtle border */
+}
+
+.nav-link {
+    position: relative;
+    padding: 0.5rem 0.75rem; /* Tailwind: py-2 px-3 */
+    color: #D1D5DB; /* Tailwind: text-gray-300 */
+    transition: color 0.3s ease;
+    font-weight: 500; /* Tailwind: font-medium */
+}
+
+.nav-link:hover,
+.nav-link.active { /* Added .active class for CSS targeting */
+    color: #FFFFFF; /* Tailwind: text-white */
+}
+
+/* Underline effect for nav links */
+.nav-link::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 2px;
+    bottom: -4px; /* Adjust as needed */
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: #F59E0B; /* Amber accent - Tailwind: bg-amber-500 */
+    transition: width 0.3s ease;
+}
+
+.nav-link:hover::after,
+.nav-link.active::after { /* Added .active for underline on active link */
+    width: 70%;
+}
+
+/* Dropdown custom styles */
+.dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #1F2937; /* Tailwind: bg-gray-800 */
+    min-width: 220px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 10; /* Tailwind: z-10 */
+    border-radius: 0.375rem; /* Tailwind: rounded-md */
+    padding: 0.5rem 0; /* Tailwind: py-2 */
+    margin-top: 0.5rem; /* Tailwind: mt-2 */
+}
+
+.dropdown-content a {
+    color: #D1D5DB; /* Tailwind: text-gray-300 */
+    padding: 0.75rem 1rem; /* Tailwind: px-4 py-3 */
+    text-decoration: none;
+    display: block;
+    font-size: 0.875rem; /* Tailwind: text-sm */
+    transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+.dropdown-content a:hover {
+    background-color: #374151; /* Tailwind: hover:bg-gray-700 */
+    color: #FFFFFF; /* Tailwind: hover:text-white */
+}
+
+/* Show dropdown on hover */
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
+/* Hero Section custom styles */
+.hero-section {
+    /* Mimicking the curved background effect is complex.
+       This is a simplified version. For actual curves, SVG or more complex CSS would be needed. */
+    background: linear-gradient(180deg, #111827 0%, #1a2333 30%, #2a3447 70%, #111827 100%);
+    padding-top: 6rem; /* Tailwind: pt-24 */
+    padding-bottom: 6rem; /* Tailwind: pb-24 */
+    /* Tailwind text-center is applied in HTML */
+}
+
+/* Titles within Hero and Sections */
+.page-title,
+.section-title,
+.course-card-title {
+    font-family: 'Oswald', sans-serif;
+}
+
+
+/* Get Started Button custom styles */
+.get-started-btn {
+    background-color: #F59E0B; /* Amber - Tailwind: bg-amber-500 */
+    color: #111827; /* Dark text on amber button - Tailwind: text-gray-900 */
+    font-weight: 600; /* Tailwind: font-semibold */
+    transition: background-color 0.3s ease;
+    /* Tailwind padding and rounded are applied in HTML */
+}
+
+.get-started-btn:hover {
+    background-color: #D97706; /* Darker amber on hover - Tailwind: hover:bg-amber-600 */
+}
+
+/* Content padding for fixed navbar */
+.content-padding {
+    padding-top: 80px; /* Adjust based on navbar height (h-20 is 80px) */
+}
+
+/* Course Card custom styles */
+.course-card {
+    background-color: #1F2937; /* Darker card background - Tailwind: bg-gray-800 */
+    border: 1px solid #374151; /* Subtle border for cards - Tailwind: border border-gray-700 */
+    /* Tailwind p-6, rounded-lg, shadow-lg, flex, flex-col are applied in HTML */
+}
+
+/* Mobile menu active link specific styling (if not fully handled by Tailwind) */
+/* #mobile-menu a.active { */
+    /* Tailwind classes bg-gray-900 and text-white are applied via JS for mobile active links */
+/* } */
+

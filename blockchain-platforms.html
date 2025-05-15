@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blockchain Platforms - Blockchain Specialization</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Oswald:wght@400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body class="bg-gray-900 text-gray-100">
+
+    <nav class="navbar fixed top-0 left-0 right-0 z-50">
+        <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-20">
+                <div class="flex-shrink-0">
+                    <a href="index.html" class="text-xl font-bold text-white hover:text-amber-400 transition-colors">Blockchain Specialization</a>
+                </div>
+
+                <div class="hidden md:flex items-center space-x-1 lg:space-x-2">
+                    <div class="dropdown">
+                        <a href="blockchain-basics.html" class="nav-link">Blockchain Basics</a>
+                        <div class="dropdown-content">
+                            <a href="blockchain-basics.html#learn">What You'll Learn</a>
+                            <a href="blockchain-basics.html#skills">Skills Gained</a>
+                        </div>
+                    </div>
+
+                    <div class="dropdown">
+                        <a href="smart-contracts.html" class="nav-link">Smart Contracts</a>
+                        <div class="dropdown-content">
+                            <a href="smart-contracts.html#learn">What You'll Learn</a>
+                            <a href="smart-contracts.html#skills">Skills Gained</a>
+                        </div>
+                    </div>
+
+                    <div class="dropdown">
+                        <a href="dapps.html" class="nav-link">DApps</a>
+                        <div class="dropdown-content">
+                            <a href="dapps.html#learn">What You'll Learn</a>
+                            <a href="dapps.html#skills">Skills Gained</a>
+                        </div>
+                    </div>
+
+                    <div class="dropdown">
+                        <a href="blockchain-platforms.html" class="nav-link">Platforms</a>
+                        <div class="dropdown-content">
+                            <a href="blockchain-platforms.html#learn">What You'll Learn</a>
+                            <a href="blockchain-platforms.html#skills">Skills Gained</a>
+                        </div>
+                    </div>
+                    
+                    <a href="applied-project.html" class="nav-link">Applied Project</a>
+                    <a href="about.html" class="nav-link">About</a>
+                </div>
+
+                <div class="hidden md:block">
+                    <a href="index.html#courses-overview" class="get-started-btn px-4 py-2 rounded-md text-sm">
+                        GET STARTED
+                    </a>
+                </div>
+
+                <div class="md:hidden flex items-center">
+                    <button id="mobile-menu-button" class="text-gray-400 hover:text-white focus:outline-none focus:text-white">
+                        <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7" />
+                        </svg>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <div id="mobile-menu" class="md:hidden hidden bg-gray-800">
+            <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3">
+                <a href="blockchain-basics.html" class="text-gray-300 hover:bg-gray-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium">Blockchain Basics</a>
+                <a href="smart-contracts.html" class="text-gray-300 hover:bg-gray-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium">Smart Contracts</a>
+                <a href="dapps.html" class="text-gray-300 hover:bg-gray-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium">DApps</a>
+                <a href="blockchain-platforms.html" class="text-gray-300 hover:bg-gray-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium">Platforms</a>
+                <a href="applied-project.html" class="text-gray-300 hover:bg-gray-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium">Applied Project</a>
+                <a href="about.html" class="text-gray-300 hover:bg-gray-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium">About</a>
+                <a href="index.html#courses-overview" class="mt-2 get-started-btn block text-center w-full px-4 py-2 rounded-md text-sm">GET STARTED</a>
+            </div>
+        </div>
+    </nav>
+
+    <main class="container mx-auto px-4 sm:px-6 lg:px-8 py-12 content-padding">
+        <h1 class="page-title text-4xl sm:text-5xl font-bold text-white mb-10 text-center">Blockchain Platforms</h1>
+
+        <section class="mb-12 bg-gray-800 p-6 md:p-8 rounded-lg shadow-xl">
+            <p class="text-lg text-gray-300 leading-relaxed">
+                This fourth course of the Blockchain specialization provides learners with an understanding of the broader blockchain ecosystem. You'll explore various blockchain platforms, their unique features, consensus mechanisms, and specific industry-wide frameworks.
+            </p>
+        </section>
+
+        <section id="learn" class="mb-12 bg-gray-800 p-6 md:p-8 rounded-lg shadow-xl">
+            <h2 class="section-title text-3xl font-semibold text-amber-400 mb-6">What You'll Learn</h2>
+            <div class="text-gray-300 leading-relaxed space-y-4">
+                <p>After completing this course, you will be able to:</p>
+                <ul class="list-disc list-inside ml-4 space-y-2">
+                    <li>Understand smart contracts as a core idea and computational model of blockchain that enables automation, autonomy, scalability, and transparency.</li>
+                    <li>Have an understanding and working knowledge of the emerging blockchain technology landscape beyond Ethereum.</li>
+                    <li>Compare and contrast different blockchain platforms (e.g., Bitcoin, Ethereum, Hyperledger Fabric, Polkadot, Solana, etc.) based on their architecture, use cases, and trade-offs.</li>
+                    <li>Analyze various consensus mechanisms and their implications.</li>
+                    <li>How to design and program smart contracts and decentralized applications considering platform-specific features.</li>
+                    <li>How to think of innovative application models, leveraging the unique capabilities of different blockchain technologies.</li>
+                    <li>Understand interoperability challenges and solutions between different blockchains.</li>
+                    <li>Be aware of current trends and future directions in blockchain platform development.</li>
+                </ul>
+            </div>
+        </section>
+
+        <section id="skills" class="mb-12 bg-gray-800 p-6 md:p-8 rounded-lg shadow-xl">
+            <h2 class="section-title text-3xl font-semibold text-amber-400 mb-6">Skills You'll Gain</h2>
+            <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4 text-gray-300">
+                <div class="bg-gray-700 p-4 rounded-md shadow-md">Security Engineering (Platform-specific considerations)</div>
+                <div class="bg-gray-700 p-4 rounded-md shadow-md">BlockChain (Comparative Analysis)</div>
+                <div class="bg-gray-700 p-4 rounded-md shadow-md">Encryption (as applied in various platforms)</div>
+                <div class="bg-gray-700 p-4 rounded-md shadow-md">Web Development Tools (for interacting with different platforms)</div>
+                <div class="bg-gray-700 p-4 rounded-md shadow-md">Emerging Technologies (Blockchain Ecosystem)</div>
+                <div class="bg-gray-700 p-4 rounded-md shadow-md">Microsoft Azure (Blockchain as a Service options)</div>
+                <div class="bg-gray-700 p-4 rounded-md shadow-md">Program Development (Adapting to different platforms)</div>
+                <div class="bg-gray-700 p-4 rounded-md shadow-md">Test Driven Development (TDD) (Platform-specific testing)</div>
+                <div class="bg-gray-700 p-4 rounded-md shadow-md">Consensus Mechanisms Analysis</div>
+                <div class="bg-gray-700 p-4 rounded-md shadow-md">Blockchain Interoperability Concepts</div>
+            </div>
+        </section>
+
+        <section class="mb-12 text-center">
+            <h3 class="section-title text-2xl text-white mb-4">Platform Spotlights (Example)</h3>
+            <p class="text-gray-400">
+                (Here you could have subsections for Ethereum, Hyperledger, Polkadot, Solana, etc., detailing their specifics.)
+            </p>
+        </section>
+
+    </main>
+
+    <footer class="bg-gray-800 border-t border-gray-700 mt-20">
+        <div class="container mx-auto px-4 sm:px-6 lg:px-8 py-8 text-center text-gray-400 text-sm">
+            <p>&copy; <span id="currentYear"></span> Blockchain Specialization. All Rights Reserved.</p>
+            <p class="mt-1">Inspired by Cavin's Thirst For Knowledge.</p>
+        </div>
+    </footer>
+
+    <script>
+        // Mobile menu toggle
+        const mobileMenuButton = document.getElementById('mobile-menu-button');
+        const mobileMenu = document.getElementById('mobile-menu');
+
+        if (mobileMenuButton && mobileMenu) {
+            mobileMenuButton.addEventListener('click', () => {
+                mobileMenu.classList.toggle('hidden');
+            });
+        }
+
+
+        // Set current year in footer
+        const currentYearElement = document.getElementById('currentYear');
+        if (currentYearElement) {
+            currentYearElement.textContent = new Date().getFullYear();
+        }
+        
+
+        // Active link highlighting
+        const navLinks = document.querySelectorAll('.navbar .nav-link, #mobile-menu a');
+        // For specific pages, use the actual filename.
+        const currentPage = window.location.pathname.split('/').pop() || 'index.html'; 
+
+        navLinks.forEach(link => {
+            // Handle cases where href might be just "#" or empty
+            const linkHref = link.getAttribute('href');
+            if (!linkHref) return;
+
+            const linkPage = linkHref.split('/').pop().split('#')[0] || 'index.html';
+
+            if (linkPage === currentPage) {
+                link.classList.add('active'); 
+                if(link.closest('#mobile-menu')) {
+                     link.classList.add('bg-gray-900', 'text-white'); 
+                } else if (link.classList.contains('nav-link')) { 
+                    link.classList.add('text-white'); 
+                }
+            }
+
+            if (link.classList.contains('nav-link')) {
+                const dropdownContent = link.nextElementSibling;
+                if (dropdownContent && dropdownContent.classList.contains('dropdown-content')) {
+                    const dropdownLinks = dropdownContent.querySelectorAll('a');
+                    let parentShouldBeActive = false;
+                    
+                    if (linkHref.split('/').pop().split('#')[0] === currentPage) {
+                        parentShouldBeActive = true;
+                    } else { 
+                        dropdownLinks.forEach(ddLink => {
+                            const ddLinkHref = ddLink.getAttribute('href');
+                            if (!ddLinkHref) return;
+                            const ddLinkPage = ddLinkHref.split('/').pop().split('#')[0];
+                            if (ddLinkPage === currentPage) {
+                                parentShouldBeActive = true;
+                            }
+                        });
+                    }
+                    if (parentShouldBeActive) {
+                        link.classList.add('active', 'text-white');
+                    }
+                }
+            }
+        });
+    </script>
+
+</body>
+</html>

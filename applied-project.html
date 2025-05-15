@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Applied Learning Project - Blockchain Specialization</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Oswald:wght@400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body class="bg-gray-900 text-gray-100">
+
+    <nav class="navbar fixed top-0 left-0 right-0 z-50">
+        <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-20">
+                <div class="flex-shrink-0">
+                    <a href="index.html" class="text-xl font-bold text-white hover:text-amber-400 transition-colors">Blockchain Specialization</a>
+                </div>
+
+                <div class="hidden md:flex items-center space-x-1 lg:space-x-2">
+                    <div class="dropdown">
+                        <a href="blockchain-basics.html" class="nav-link">Blockchain Basics</a>
+                        <div class="dropdown-content">
+                            <a href="blockchain-basics.html#learn">What You'll Learn</a>
+                            <a href="blockchain-basics.html#skills">Skills Gained</a>
+                        </div>
+                    </div>
+
+                    <div class="dropdown">
+                        <a href="smart-contracts.html" class="nav-link">Smart Contracts</a>
+                        <div class="dropdown-content">
+                            <a href="smart-contracts.html#learn">What You'll Learn</a>
+                            <a href="smart-contracts.html#skills">Skills Gained</a>
+                        </div>
+                    </div>
+
+                    <div class="dropdown">
+                        <a href="dapps.html" class="nav-link">DApps</a>
+                        <div class="dropdown-content">
+                            <a href="dapps.html#learn">What You'll Learn</a>
+                            <a href="dapps.html#skills">Skills Gained</a>
+                        </div>
+                    </div>
+
+                    <div class="dropdown">
+                        <a href="blockchain-platforms.html" class="nav-link">Platforms</a>
+                        <div class="dropdown-content">
+                            <a href="blockchain-platforms.html#learn">What You'll Learn</a>
+                            <a href="blockchain-platforms.html#skills">Skills Gained</a>
+                        </div>
+                    </div>
+                    
+                    <a href="applied-project.html" class="nav-link">Applied Project</a>
+                    <a href="about.html" class="nav-link">About</a>
+                </div>
+
+                <div class="hidden md:block">
+                    <a href="index.html#courses-overview" class="get-started-btn px-4 py-2 rounded-md text-sm">
+                        GET STARTED
+                    </a>
+                </div>
+
+                <div class="md:hidden flex items-center">
+                    <button id="mobile-menu-button" class="text-gray-400 hover:text-white focus:outline-none focus:text-white">
+                        <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7" />
+                        </svg>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <div id="mobile-menu" class="md:hidden hidden bg-gray-800">
+            <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3">
+                <a href="blockchain-basics.html" class="text-gray-300 hover:bg-gray-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium">Blockchain Basics</a>
+                <a href="smart-contracts.html" class="text-gray-300 hover:bg-gray-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium">Smart Contracts</a>
+                <a href="dapps.html" class="text-gray-300 hover:bg-gray-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium">DApps</a>
+                <a href="blockchain-platforms.html" class="text-gray-300 hover:bg-gray-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium">Platforms</a>
+                <a href="applied-project.html" class="text-gray-300 hover:bg-gray-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium">Applied Project</a>
+                <a href="about.html" class="text-gray-300 hover:bg-gray-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium">About</a>
+                <a href="index.html#courses-overview" class="mt-2 get-started-btn block text-center w-full px-4 py-2 rounded-md text-sm">GET STARTED</a>
+            </div>
+        </div>
+    </nav>
+
+    <main class="container mx-auto px-4 sm:px-6 lg:px-8 py-12 content-padding">
+        <h1 class="page-title text-4xl sm:text-5xl font-bold text-white mb-10 text-center">Applied Learning Project</h1>
+
+        <section id="project-overview" class="mb-12 bg-gray-800 p-6 md:p-8 rounded-lg shadow-xl">
+            <h2 class="section-title text-3xl font-semibold text-amber-400 mb-6">Project Overview</h2>
+            <div class="text-gray-300 leading-relaxed space-y-4">
+                <p>
+                    The Applied Learning Project is designed to provide you with hands-on experience, allowing you to synthesize and apply the knowledge and skills gained throughout the Blockchain Specialization. This capstone project will challenge you to build a functional blockchain-based solution.
+                </p>
+                <p>
+                    Learners will apply the concepts covered in the courses to:
+                </p>
+                <ul class="list-disc list-inside ml-4 space-y-2">
+                    <li>Deploy an instance of a blockchain.</li>
+                    <li>Carry out peer-to-peer transactions on your deployed blockchain.</li>
+                    <li>Program and thoroughly test smart contracts using a language like Solidity.</li>
+                    <li>Analyze, design, and code a blockchain-based solution for a decentralized application (DApp).</li>
+                </ul>
+                <p>
+                    This project will serve as a significant portfolio piece, demonstrating your practical abilities in blockchain development.
+                </p>
+            </div>
+        </section>
+
+        <section id="project-requirements" class="mb-12 bg-gray-800 p-6 md:p-8 rounded-lg shadow-xl">
+            <h2 class="section-title text-3xl font-semibold text-amber-400 mb-6">Key Project Phases [&] Deliverables (Example)</h2>
+            <div class="text-gray-300 leading-relaxed space-y-4">
+                <ol class="list-decimal list-inside ml-4 space-y-3">
+                    <li>
+                        <strong>Conceptualization [&] Design:</strong>
+                        <ul class="list-disc list-inside ml-6 mt-1 text-gray-400">
+                            <li>Define the problem your DApp will solve.</li>
+                            <li>Design the DApp architecture, including smart contract interactions and user flows.</li>
+                            <li>Document your design choices.</li>
+                        </ul>
+                    </li>
+                    <li>
+                        <strong>Smart Contract Development:</strong>
+                        <ul class="list-disc list-inside ml-6 mt-1 text-gray-400">
+                            <li>Write, compile, and test your smart contracts.</li>
+                            <li>Implement core logic and data structures.</li>
+                        </ul>
+                    </li>
+                    <li>
+                        <strong>DApp Front-End Development:</strong>
+                        <ul class="list-disc list-inside ml-6 mt-1 text-gray-400">
+                            <li>Develop the user interface for interacting with your smart contracts.</li>
+                            <li>Integrate wallet connections and transaction handling.</li>
+                        </ul>
+                    </li>
+                    <li>
+                        <strong>Deployment [&] Testing:</strong>
+                        <ul class="list-disc list-inside ml-6 mt-1 text-gray-400">
+                            <li>Deploy your smart contracts to a test network (and optionally a private blockchain instance).</li>
+                            <li>Conduct end-to-end testing of your DApp.</li>
+                        </ul>
+                    </li>
+                    <li>
+                        <strong>Documentation [&] Presentation:</strong>
+                        <ul class="list-disc list-inside ml-6 mt-1 text-gray-400">
+                            <li>Prepare a final report detailing your project, design, implementation, and challenges.</li>
+                            <li>(Optional) Prepare a short video demonstration.</li>
+                        </ul>
+                    </li>
+                </ol>
+            </div>
+        </section>
+
+        <section id="tools-technologies" class="mb-12 bg-gray-800 p-6 md:p-8 rounded-lg shadow-xl">
+            <h2 class="section-title text-3xl font-semibold text-amber-400 mb-6">Recommended Tools [&] Technologies</h2>
+            <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4 text-gray-300">
+                <div class="bg-gray-700 p-4 rounded-md shadow-md">Solidity</div>
+                <div class="bg-gray-700 p-4 rounded-md shadow-md">Remix IDE</div>
+                <div class="bg-gray-700 p-4 rounded-md shadow-md">Truffle Suite / Hardhat</div>
+                <div class="bg-gray-700 p-4 rounded-md shadow-md">Ganache / Local Testnet</div>
+                <div class="bg-gray-700 p-4 rounded-md shadow-md">Web3.js / Ethers.js</div>
+                <div class="bg-gray-700 p-4 rounded-md shadow-md">MetaMask</div>
+                <div class="bg-gray-700 p-4 rounded-md shadow-md">React / Vue / Angular (for front-end)</div>
+                <div class="bg-gray-700 p-4 rounded-md shadow-md">Git / GitHub</div>
+            </div>
+        </section>
+
+    </main>
+
+    <footer class="bg-gray-800 border-t border-gray-700 mt-20">
+        <div class="container mx-auto px-4 sm:px-6 lg:px-8 py-8 text-center text-gray-400 text-sm">
+            <p>&copy; <span id="currentYear"></span> Blockchain Specialization. All Rights Reserved.</p>
+            <p class="mt-1">Inspired by Cavin's Thirst For Knowledge.</p>
+        </div>
+    </footer>
+
+    <script>
+        // Mobile menu toggle
+        const mobileMenuButton = document.getElementById('mobile-menu-button');
+        const mobileMenu = document.getElementById('mobile-menu');
+
+        if (mobileMenuButton && mobileMenu) {
+            mobileMenuButton.addEventListener('click', () => {
+                mobileMenu.classList.toggle('hidden');
+            });
+        }
+
+
+        // Set current year in footer
+        const currentYearElement = document.getElementById('currentYear');
+        if (currentYearElement) {
+            currentYearElement.textContent = new Date().getFullYear();
+        }
+        
+
+        // Active link highlighting
+        const navLinks = document.querySelectorAll('.navbar .nav-link, #mobile-menu a');
+        // For specific pages, use the actual filename.
+        const currentPage = window.location.pathname.split('/').pop() || 'index.html'; 
+
+        navLinks.forEach(link => {
+            // Handle cases where href might be just "#" or empty
+            const linkHref = link.getAttribute('href');
+            if (!linkHref) return;
+
+            const linkPage = linkHref.split('/').pop().split('#')[0] || 'index.html';
+
+            if (linkPage === currentPage) {
+                link.classList.add('active'); 
+                if(link.closest('#mobile-menu')) {
+                     link.classList.add('bg-gray-900', 'text-white'); 
+                } else if (link.classList.contains('nav-link')) { 
+                    link.classList.add('text-white'); 
+                }
+            }
+
+            if (link.classList.contains('nav-link')) {
+                const dropdownContent = link.nextElementSibling;
+                if (dropdownContent && dropdownContent.classList.contains('dropdown-content')) {
+                    const dropdownLinks = dropdownContent.querySelectorAll('a');
+                    let parentShouldBeActive = false;
+                    
+                    if (linkHref.split('/').pop().split('#')[0] === currentPage) {
+                        parentShouldBeActive = true;
+                    } else { 
+                        dropdownLinks.forEach(ddLink => {
+                            const ddLinkHref = ddLink.getAttribute('href');
+                            if (!ddLinkHref) return;
+                            const ddLinkPage = ddLinkHref.split('/').pop().split('#')[0];
+                            if (ddLinkPage === currentPage) {
+                                parentShouldBeActive = true;
+                            }
+                        });
+                    }
+                    if (parentShouldBeActive) {
+                        link.classList.add('active', 'text-white');
+                    }
+                }
+            }
+        });
+    </script>
+
+</body>
+</html>
