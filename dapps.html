@@ -3,10 +3,21 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Smart Contracts - Blockchain Specialization</title>
+    <title>Decentralized Applications (DApps) - Blockchain Specialization</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Oswald:wght@400;500;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="styles.css">
+    <style>
+        /* Additional styles for tables if needed */
+        .comparison-table th, .comparison-table td {
+            border: 1px solid #374151; /* Tailwind gray-700 */
+            padding: 0.75rem; /* Tailwind p-3 */
+            text-align: left;
+        }
+        .comparison-table th {
+            background-color: #1F2937; /* Tailwind gray-800 */
+        }
+    </style>
 </head>
 <body class="bg-gray-900 text-gray-100">
 
@@ -23,9 +34,11 @@
                         <div class="dropdown-content">
                             <a href="blockchain-basics.html#learn">What You'll Learn</a>
                             <a href="blockchain-basics.html#skills">Skills Gained</a>
+                            <a href="blockchain-basics.html#what-is-blockchain">What is Blockchain?</a>
+                            <a href="blockchain-basics.html#how-it-works">How It Works</a>
+                            <a href="blockchain-basics.html#types-of-blockchains">Types of Blockchains</a>
                         </div>
                     </div>
-
                     <div class="dropdown">
                         <a href="smart-contracts.html" class="nav-link">Smart Contracts</a>
                         <div class="dropdown-content">
@@ -33,15 +46,19 @@
                             <a href="smart-contracts.html#skills">Skills Gained</a>
                         </div>
                     </div>
-
                     <div class="dropdown">
                         <a href="dapps.html" class="nav-link">DApps</a>
                         <div class="dropdown-content">
                             <a href="dapps.html#learn">What You'll Learn</a>
-                            <a href="dapps.html#skills">Skills Gained</a>
+                            <a href="dapps.html#what-is-dapp">What is a Dapp?</a>
+                            <a href="dapps.html#architecture">Dapp Architecture</a>
+                            <a href="dapps.html#benefits">Benefits</a>
+                            <a href="dapps.html#examples">Examples</a>
+                            <a href="dapps.html#interacting">Interacting</a>
+                            <a href="dapps.html#governance">Governance [&] DAOs</a>
+                            <a href="dapps.html#future-of-dapps">Future of Dapps</a>
                         </div>
                     </div>
-
                     <div class="dropdown">
                         <a href="blockchain-platforms.html" class="nav-link">Platforms</a>
                         <div class="dropdown-content">
@@ -49,7 +66,6 @@
                             <a href="blockchain-platforms.html#skills">Skills Gained</a>
                         </div>
                     </div>
-                    
                     <a href="applied-project.html" class="nav-link">Applied Project</a>
                     <a href="about.html" class="nav-link">About</a>
                 </div>
@@ -84,52 +100,278 @@
     </nav>
 
     <main class="container mx-auto px-4 sm:px-6 lg:px-8 py-12 content-padding">
-        <h1 class="page-title text-4xl sm:text-5xl font-bold text-white mb-10 text-center">Smart Contracts</h1>
-
-        <section class="mb-12 bg-gray-800 p-6 md:p-8 rounded-lg shadow-xl">
-            <p class="text-lg text-gray-300 leading-relaxed">
-                This second course of the Blockchain specialization will help you design, code, deploy, and execute a smart contract. You'll gain hands-on experience with the tools and techniques necessary to build and manage these powerful automated agreements on the blockchain.
-            </p>
-        </section>
+        <h1 class="page-title text-4xl sm:text-5xl font-bold text-white mb-10 text-center">Course 3: Decentralized Applications (DApps)</h1>
 
         <section id="learn" class="mb-12 bg-gray-800 p-6 md:p-8 rounded-lg shadow-xl">
             <h2 class="section-title text-3xl font-semibold text-amber-400 mb-6">What You'll Learn</h2>
+            <p class="text-lg text-gray-300 leading-relaxed mb-4">
+                This third course of the Blockchain specialization prepares you to design and develop end-to-end decentralized applications (Dapps). You will learn how to build applications that leverage the unique capabilities of blockchain technology, such as transparency, immutability, and censorship resistance. We'll look at how Dapps are structured, how they differ from traditional applications, and the unique considerations involved in building them, with a focus on how Dapps leverage smart contracts for their core logic and interact with the blockchain.
+            </p>
+            <h3 class="text-xl font-semibold text-amber-300 mt-4 mb-2">Skills You'll Gain (Conceptual Understanding):</h3>
+             <ul class="list-disc list-inside text-gray-300 space-y-2 pl-4">
+                <li>Blockchain (as the foundational backend)</li>
+                <li>Finance (as many Dapps have financial components)</li>
+                <li>Design And Product (Dapp usability and purpose)</li>
+                <li>Software Architecture (Dapp components and structure)</li>
+                <li>Software Engineering (principles in Dapp development)</li>
+                <li>Smart Contract (as the core logic layer)</li>
+                <li>Product Design (for decentralized products)</li>
+                <li>Distributed Computing Architecture (inherent in Dapps)</li>
+                <li>Computer Programming (for frontend and smart contract interaction)</li>
+            </ul>
+        </section>
+
+        <section id="what-is-dapp" class="mb-12 bg-gray-800 p-6 md:p-8 rounded-lg shadow-xl">
+            <h2 class="section-title text-3xl font-semibold text-amber-400 mb-6">What exactly IS a Decentralized Application (Dapp)?</h2>
             <div class="text-gray-300 leading-relaxed space-y-4">
-                <p>Upon completion of this course, you will be able to:</p>
+                <p>A Decentralized Application (Dapp) is an application that runs on a decentralized network, such as a blockchain or a peer-to-peer (P2P) network, rather than on centralized servers. Think of it as an app whose backend logic is powered by smart contracts and whose critical data is stored on a blockchain.</p>
+                <h3 class="text-xl font-semibold text-amber-300 mt-4 mb-2">Core Components and Characteristics:</h3>
                 <ul class="list-disc list-inside ml-4 space-y-2">
-                    <li>Understand the fundamental principles and architecture of smart contracts.</li>
-                    <li>Design smart contracts to solve specific business or logical problems.</li>
-                    <li>Write smart contract code using relevant programming languages (e.g., Solidity for Ethereum).</li>
-                    <li>Test and debug smart contracts effectively.</li>
-                    <li>Deploy smart contracts to a blockchain network.</li>
-                    <li>Interact with deployed smart contracts and execute their functions.</li>
-                    <li>Recognize common security vulnerabilities in smart contracts and how to mitigate them.</li>
+                    <li><strong>Decentralized Backend:</strong> The core logic often resides in smart contracts on a blockchain (e.g., Ethereum), defining rules and executing automatically.</li>
+                    <li><strong>Frontend Interface:</strong> A user interface (UI) – website or mobile app – that interacts with the smart contracts on the blockchain.</li>
+                    <li><strong>Data Storage:</strong> Critical data is typically stored on the blockchain or decentralized storage solutions (like IPFS).</li>
+                    <li><strong>Open Source (Often):</strong> Many Dapps, especially their smart contracts, are open source for transparency and auditability.</li>
+                    <li><strong>Autonomous Operation:</strong> Backend smart contracts can operate autonomously per their programmed rules.</li>
+                    <li><strong>Cryptographic Tokens (Often):</strong> Used for accessing features, rewarding users, or as a governance mechanism.</li>
                 </ul>
             </div>
         </section>
 
-        <section id="skills" class="mb-12 bg-gray-800 p-6 md:p-8 rounded-lg shadow-xl">
-            <h2 class="section-title text-3xl font-semibold text-amber-400 mb-6">Skills You'll Gain</h2>
-            <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4 text-gray-300">
-                <div class="bg-gray-700 p-4 rounded-md shadow-md">Algorithms</div>
-                <div class="bg-gray-700 p-4 rounded-md shadow-md">Critical Thinking</div>
-                <div class="bg-gray-700 p-4 rounded-md shadow-md">Computer Programming</div>
-                <div class="bg-gray-700 p-4 rounded-md shadow-md">Blockchain</div>
-                <div class="bg-gray-700 p-4 rounded-md shadow-md">Other Programming Languages (e.g., Solidity)</div>
-                <div class="bg-gray-700 p-4 rounded-md shadow-md">Programming Principles</div>
-                <div class="bg-gray-700 p-4 rounded-md shadow-md">Problem Solving</div>
-                <div class="bg-gray-700 p-4 rounded-md shadow-md">Data Structures</div>
-                <div class="bg-gray-700 p-4 rounded-md shadow-md">Smart Contract Development</div>
-                <div class="bg-gray-700 p-4 rounded-md shadow-md">Smart Contract Deployment</div>
-                <div class="bg-gray-700 p-4 rounded-md shadow-md">Smart Contract Testing</div>
+        <section id="dapp-comparison" class="mb-12 bg-gray-800 p-6 md:p-8 rounded-lg shadow-xl overflow-x-auto">
+            <h2 class="section-title text-3xl font-semibold text-amber-400 mb-6">How Dapps Differ from Traditional Applications</h2>
+            <div class="text-gray-300 leading-relaxed space-y-4">
+                <p>Let's compare them across a few key dimensions:</p>
+                <table class="comparison-table w-full text-sm mt-4">
+                    <thead>
+                        <tr>
+                            <th>Feature</th>
+                            <th>Traditional Application (e.g., Facebook, Gmail)</th>
+                            <th>Decentralized Application (Dapp) (e.g., Uniswap, Cryptokitties)</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Backend Architecture</td>
+                            <td>Runs on centralized servers owned by a single entity.</td>
+                            <td>Backend logic (smart contracts) runs on a decentralized blockchain network.</td>
+                        </tr>
+                        <tr>
+                            <td>Data Storage</td>
+                            <td>Data stored in centralized databases.</td>
+                            <td>Critical data stored on the immutable blockchain or decentralized storage.</td>
+                        </tr>
+                        <tr>
+                            <td>Control [&] Ownership</td>
+                            <td>Controlled by the company/organization that owns it.</td>
+                            <td>No single point of control; often community-governed.</td>
+                        </tr>
+                        <tr>
+                            <td>Censorship Resistance</td>
+                            <td>Susceptible to censorship by the owner or authorities.</td>
+                            <td>Highly resistant to censorship by any single entity.</td>
+                        </tr>
+                        <tr>
+                            <td>Trust Model</td>
+                            <td>Users trust the application provider.</td>
+                            <td>Trust is in the code (smart contracts) and the blockchain's consensus. "Code is Law."</td>
+                        </tr>
+                        <tr>
+                            <td>Transparency</td>
+                            <td>Backend logic and operations are typically opaque.</td>
+                            <td>Smart contract code and transactions are often public and auditable (on public blockchains).</td>
+                        </tr>
+                        <tr>
+                            <td>Resilience/Uptime</td>
+                            <td>Vulnerable to server outages or shutdowns by the owner.</td>
+                            <td>As long as the underlying blockchain is running, the Dapp can function. Highly resilient.</td>
+                        </tr>
+                        <tr>
+                            <td>Development/Updates</td>
+                            <td>Centralized development team pushes updates.</td>
+                            <td>Updates can be more complex due to immutability (often requiring new contract deployments or governance votes).</td>
+                        </tr>
+                        <tr>
+                            <td>User Interaction</td>
+                            <td>Typically straightforward login/account systems.</td>
+                            <td>Often requires users to manage crypto wallets and pay transaction fees (gas).</td>
+                        </tr>
+                        <tr>
+                            <td>Identity</td>
+                            <td>Users identified by email, username, etc.</td>
+                            <td>Users often interact via pseudonymous blockchain addresses.</td>
+                        </tr>
+                        <tr>
+                            <td>Monetization</td>
+                            <td>Ads, subscriptions, data sales.</td>
+                            <td>Can involve native tokens, transaction fees, protocol revenue shared with users/stakers.</td>
+                        </tr>
+                    </tbody>
+                </table>
+                <p class="mt-4"><strong>Think of it this way:</strong></p>
+                <ul class="list-disc list-inside ml-4 space-y-2">
+                    <li><strong>Traditional App:</strong> Like a restaurant where the owner controls the kitchen, the menu, and who gets to eat there.</li>
+                    <li><strong>Dapp:</strong> More like a community-run potluck where the rules for contributing and sharing are agreed upon upfront (the smart contract), everyone can see what's happening, and it's hard for one person to change the rules or shut it down.</li>
+                </ul>
+                <p>The key takeaway is that Dapps leverage the core properties of blockchain and smart contracts – decentralization, immutability, transparency, and trustlessness (trust in code rather than people) – to create new kinds of applications that are more resistant to censorship, more transparent, and often give more control to users.</p>
             </div>
         </section>
 
-        <section class="mb-12 text-center">
-            <h3 class="section-title text-2xl text-white mb-4">Course Modules (Example)</h3>
-            <p class="text-gray-400">
-                (Here you could list modules like: Introduction to Solidity, Smart Contract Design Patterns, Testing with Truffle, Deployment to Testnet, etc.)
-            </p>
+        <section id="architecture" class="mb-12 bg-gray-800 p-6 md:p-8 rounded-lg shadow-xl">
+            <h2 class="section-title text-3xl font-semibold text-amber-400 mb-6">Typical Dapp Architecture</h2>
+            <div class="text-gray-300 leading-relaxed space-y-4">
+                <p>While specifics vary, a typical Dapp architecture includes several interconnected layers:</p>
+                <ul class="list-disc list-inside ml-4 space-y-3">
+                    <li><strong>Frontend (UI/UX):</strong> The user-facing part (web or mobile app) built with standard technologies (HTML, CSS, JavaScript, React, Vue, etc.). It presents info and takes user input.</li>
+                    <li><strong>Wallet:</strong> Crucial software (e.g., MetaMask browser extension, Trust Wallet mobile app) that manages user's private keys, signs transactions, and connects to the blockchain network.</li>
+                    <li><strong>Blockchain Client Library (e.g., Web3.js, Ethers.js):</strong> JavaScript libraries in the frontend that enable communication with the user's wallet and interaction with smart contracts (calling functions, listening for events, querying data).</li>
+                    <li><strong>Smart Contracts (Backend Logic):</strong> Self-executing code deployed on a blockchain (e.g., Ethereum) defining the Dapp's rules, managing state, and handling transactions.</li>
+                    <li><strong>Blockchain Network:</strong> The underlying decentralized network (e.g., Ethereum Mainnet) providing the secure environment for storing smart contracts and executing transactions.</li>
+                    <li><strong>Decentralized Storage (Optional):</strong> Solutions like IPFS or Arweave for storing large files (images, videos, frontend code) off-chain, with a hash often stored on-chain for integrity.</li>
+                    <li><strong>Off-Chain Backend Services (Sometimes):</strong> For tasks unsuitable for on-chain execution (complex computations, caching). Must be designed carefully to avoid reintroducing centralization.</li>
+                    <li><strong>Oracles:</strong> Services that securely feed external, real-world data (price feeds, weather data) to smart contracts.</li>
+                </ul>
+                <h4 class="text-lg font-semibold text-amber-200 mt-3 mb-1">Simplified Interaction Flow:</h4>
+                <ol class="list-decimal list-inside ml-4 space-y-1">
+                    <li>User interacts with the Dapp's Frontend.</li>
+                    <li>Frontend, via a Client Library, crafts a transaction and requests the Wallet to sign it.</li>
+                    <li>Wallet prompts user to approve and sign.</li>
+                    <li>Signed transaction is broadcast to the Blockchain Network.</li>
+                    <li>Miners/validators execute the Smart Contract function.</li>
+                    <li>Smart contract state may change, and events may be emitted.</li>
+                    <li>Frontend updates to reflect changes.</li>
+                </ol>
+            </div>
+        </section>
+
+        <section id="benefits" class="mb-12 bg-gray-800 p-6 md:p-8 rounded-lg shadow-xl">
+            <h2 class="section-title text-3xl font-semibold text-amber-400 mb-6">Benefits of Decentralized Applications (Dapps)</h2>
+            <div class="text-gray-300 leading-relaxed space-y-4">
+                <p>Based on their unique architecture, Dapps offer several significant advantages:</p>
+                <ul class="list-disc list-inside ml-4 space-y-3">
+                    <li><strong>Decentralization [&] Enhanced Security:</strong> No single point of failure; highly resistant to attacks and outages. Data is cryptographically secured and tamper-proof.</li>
+                    <li><strong>Transparency [&] Auditability:</strong> Transactions and often source code (smart contracts) are public on the blockchain, fostering trust and allowing verification.</li>
+                    <li><strong>Censorship Resistance:</strong> Difficult for any single entity to shut down or censor the Dapp or its users.</li>
+                    <li><strong>User Control [&] Data Ownership:</strong> Users often have more control over their data and digital assets, interacting via private keys.</li>
+                    <li><strong>Trustlessness [&] Reduced Counterparty Risk:</strong> Smart contracts automate agreements, reducing reliance on intermediaries and the risk of one party defaulting.</li>
+                    <li><strong>Zero or Reduced Downtime:</strong> Rely on a distributed network, ensuring continuous availability even if some nodes fail.</li>
+                    <li><strong>Open Source [&] Community Driven (Often):</strong> Publicly available codebase can lead to faster innovation and increased security through community vetting.</li>
+                    <li><strong>Potential for Reduced Costs:</strong> Eliminating intermediaries and automating processes can reduce transaction and operational costs.</li>
+                    <li><strong>Enhanced Privacy (in some cases):</strong> Users can often interact pseudonymously, offering a degree of privacy.</li>
+                </ul>
+            </div>
+        </section>
+
+        <section id="examples" class="mb-12 bg-gray-800 p-6 md:p-8 rounded-lg shadow-xl">
+            <h2 class="section-title text-3xl font-semibold text-amber-400 mb-6">Examples of Dapps and Use Cases</h2>
+            <div class="text-gray-300 leading-relaxed space-y-4">
+                <h3 class="text-xl font-semibold text-amber-300 mt-4 mb-2">1. Decentralized Finance (DeFi) Dapps:</h3>
+                <ul class="list-disc list-inside ml-4 space-y-1">
+                    <li><strong>Lending/Borrowing:</strong> Aave, Compound.</li>
+                    <li><strong>Decentralized Exchanges (DEXs):</strong> Uniswap, Curve Finance, SushiSwap.</li>
+                    <li><strong>Stablecoins:</strong> MakerDAO (DAI).</li>
+                    <li><strong>Yield Aggregators:</strong> Yearn.finance.</li>
+                </ul>
+                <h3 class="text-xl font-semibold text-amber-300 mt-4 mb-2">2. NFT Marketplaces and Platforms:</h3>
+                <ul class="list-disc list-inside ml-4 space-y-1">
+                    <li>OpenSea, Rarible, Magic Eden, Blur.</li>
+                </ul>
+                <h3 class="text-xl font-semibold text-amber-300 mt-4 mb-2">3. Gaming and Metaverses (GameFi):</h3>
+                <ul class="list-disc list-inside ml-4 space-y-1">
+                    <li>Axie Infinity, Decentraland, The Sandbox.</li>
+                </ul>
+                <h3 class="text-xl font-semibold text-amber-300 mt-4 mb-2">4. Decentralized Social Media [&] Content Platforms:</h3>
+                <ul class="list-disc list-inside ml-4 space-y-1">
+                    <li>Steemit, Audius, Lens Protocol, Farcaster.</li>
+                </ul>
+                <h3 class="text-xl font-semibold text-amber-300 mt-4 mb-2">5. Decentralized Identity Solutions:</h3>
+                <ul class="list-disc list-inside ml-4 space-y-1">
+                    <li>Ethereum Name Service (ENS), Spruce ID.</li>
+                </ul>
+                 <h3 class="text-xl font-semibold text-amber-300 mt-4 mb-2">6. Supply Chain and Tracking:</h3>
+                <ul class="list-disc list-inside ml-4 space-y-1">
+                    <li>VeChain (platform for supply chain Dapps).</li>
+                </ul>
+            </div>
+        </section>
+
+        <section id="interacting" class="mb-12 bg-gray-800 p-6 md:p-8 rounded-lg shadow-xl">
+            <h2 class="section-title text-3xl font-semibold text-amber-400 mb-6">How to Interact with Dapps</h2>
+            <div class="text-gray-300 leading-relaxed space-y-4">
+                <p>Interacting with Dapps usually involves these key steps:</p>
+                <ul class="list-disc list-inside ml-4 space-y-3">
+                    <li><strong>Get a Crypto Wallet:</strong> Your gateway (e.g., MetaMask, Rabby, Trust Wallet). It stores your crypto/NFTs and signs transactions. <strong>Secure your seed phrase/private keys meticulously!</strong></li>
+                    <li><strong>Acquire Cryptocurrency:</strong> Needed for "gas fees" (transaction costs) and sometimes Dapp-specific tokens. Buy from exchanges and transfer to your wallet.</li>
+                    <li><strong>Connect Your Wallet to a Dapp:</strong> Most Dapps have a "Connect Wallet" button. Your wallet will ask for permission.</li>
+                    <li><strong>Interact and Approve Transactions:</strong> Use Dapp features. Actions modifying the blockchain require transaction approval in your wallet. Review details (esp. gas fees) before confirming.</li>
+                    <li><strong>Finding Dapps:</strong> Use aggregators (DappRadar, State of the Dapps) or official project websites/communities.</li>
+                </ul>
+                <h4 class="text-lg font-semibold text-amber-200 mt-3 mb-1">Important Security Considerations:</h4>
+                 <ul class="list-disc list-inside ml-4 space-y-1">
+                    <li>Verify Dapp legitimacy (beware of phishing).</li>
+                    <li>Understand permissions you grant.</li>
+                    <li>Be aware of smart contract risks (research Dapp, look for audits).</li>
+                    <li><strong>Never share your seed phrase/private keys.</strong></li>
+                    <li>Start with small amounts if new.</li>
+                </ul>
+            </div>
+        </section>
+        
+        <section id="governance" class="mb-12 bg-gray-800 p-6 md:p-8 rounded-lg shadow-xl">
+            <h2 class="section-title text-3xl font-semibold text-amber-400 mb-6">Dapp Governance [&] Decentralized Autonomous Organizations (DAOs)</h2>
+            <div class="text-gray-300 leading-relaxed space-y-4">
+                <p>Since many Dapps aim to operate without a central authority, a mechanism is needed for ongoing decision-making (upgrades, parameter changes, treasury management). This is where Decentralized Autonomous Organizations (DAOs) often come in.</p>
+                <h3 class="text-xl font-semibold text-amber-300 mt-4 mb-2">What is a DAO?</h3>
+                <p>A DAO is an organization that is decentralized (not controlled by a single entity), autonomous (many operations automated by smart contracts), and an organization (a group working towards a common goal, often managing a Dapp).</p>
+                <h3 class="text-xl font-semibold text-amber-300 mt-4 mb-2">How DAOs Typically Work for Dapp Governance:</h3>
+                <ul class="list-disc list-inside ml-4 space-y-2">
+                    <li><strong>Foundation in Smart Contracts:</strong> Core rules (proposals, voting, execution) are encoded in smart contracts.</li>
+                    <li><strong>Membership [&] Governance Tokens:</strong> Voting power is often tied to holding specific governance tokens.</li>
+                    <li><strong>Proposals:</strong> Members can submit proposals for changes or initiatives.</li>
+                    <li><strong>Voting:</strong> Token holders vote on proposals transparently on the blockchain.</li>
+                    <li><strong>Execution:</strong> Successful proposals can be automatically executed by the DAO's smart contracts.</li>
+                </ul>
+                <h3 class="text-xl font-semibold text-amber-300 mt-4 mb-2">Examples of Dapps Governed by DAOs:</h3>
+                <p>Uniswap (UNI), MakerDAO (MKR), Aave (AAVE).</p>
+                <h3 class="text-xl font-semibold text-amber-300 mt-4 mb-2">Challenges in DAO Governance:</h3>
+                <p>Voter apathy, influence of large token holders ("whales"), decision-making efficiency, security of governance contracts, and legal ambiguity.</p>
+                <p>Despite challenges, DAOs represent a shift towards more decentralized, community-led governance.</p>
+            </div>
+        </section>
+
+        <section id="future-of-dapps" class="mb-12 bg-gray-800 p-6 md:p-8 rounded-lg shadow-xl">
+            <h2 class="section-title text-3xl font-semibold text-amber-400 mb-6">The Future of Dapps: Trends and Potential Impact</h2>
+            <div class="text-gray-300 leading-relaxed space-y-4">
+                <p>The Dapp ecosystem is rapidly evolving. Key future trends include:</p>
+                <ul class="list-disc list-inside ml-4 space-y-3">
+                    <li><strong>Enhanced Scalability [&] Efficiency:</strong> Wider adoption of Layer 2 solutions for faster, cheaper transactions; continued push for energy-efficient blockchains (PoS).</li>
+                    <li><strong>Seamless Interoperability:</strong> Dapps operating across multiple blockchains (cross-chain/multi-chain) via bridges and protocols.</li>
+                    <li><strong>AI Integration:</strong> AI for smarter user experiences, enhanced smart contracts, development acceleration, advanced analytics, and DAO governance optimization.</li>
+                    <li><strong>Improved User Experience (UX/UI):</strong> Focus on making Dapps as intuitive as traditional apps, masking blockchain complexity.</li>
+                    <li><strong>NFTs Evolving Beyond Collectibles:</strong> Tokenization of Real-World Assets (RWAs), digital identity, ticketing, loyalty programs.</li>
+                    <li><strong>Mainstreaming DeFi:</strong> More user-friendly DeFi, institutional adoption, sophisticated regulated products.</li>
+                    <li><strong>Growth in Web3 Gaming [&] Metaverse:</strong> Evolving play-to-earn models, true asset ownership, interconnected Metaverse experiences.</li>
+                    <li><strong>Rise of Decentralized Identity (SSI):</strong> Greater user control over digital identities and data, enhanced by technologies like Zero-Knowledge Proofs (ZKPs).</li>
+                    <li><strong>Sophistication of DAOs:</strong> More efficient governance models, AI in decision-making, broader applications.</li>
+                    <li><strong>Increasing Regulatory Clarity:</strong> Development of global regulatory frameworks fostering trust and institutional participation.</li>
+                    <li><strong>Decentralized Physical Infrastructure Networks (DePIN):</strong> Using Dapps to manage real-world physical infrastructure (Wi-Fi, energy grids, storage) decentrally.</li>
+                </ul>
+                <p class="mt-4">The future points towards a more interconnected, intelligent, user-friendly, and regulated decentralized web, impacting finance, gaming, supply chain, social media, healthcare, and more by bringing greater transparency, user empowerment, and efficiency.</p>
+            </div>
+        </section>
+        
+        <section id="dapp-takeaways" class="mb-12 bg-gray-800 p-6 md:p-8 rounded-lg shadow-xl">
+            <h2 class="section-title text-3xl font-semibold text-amber-400 mb-6">Dapps: Key Takeaways for Beginners</h2>
+            <div class="text-gray-300 leading-relaxed space-y-4">
+                <ul class="list-disc list-inside ml-4 space-y-3">
+                    <li><strong>Different from Regular Apps:</strong> Run on decentralized networks (blockchains) via smart contracts, aiming for no single controlling entity.</li>
+                    <li><strong>Core Idea: Decentralization [&] User Control:</strong> Often give users more control over their data/assets. Transactions are typically transparent and verifiable. Highly censorship-resistant.</li>
+                    <li><strong>Crypto Wallet is Essential:</strong> Your tool to connect, manage funds, and approve transactions. <strong>Seed phrase/private key security is paramount.</strong></li>
+                    <li><strong>Key Concepts to Grasp:</strong> Blockchain, Smart Contracts, Gas Fees, Cryptocurrency.</li>
+                    <li><strong>Evolving Space with Risks:</strong> Complexity, security risks (Dapp bugs, scams), and evolving regulations are realities. Start slow and do your research.</li>
+                    <li><strong>Major Use Cases Emerging:</strong> DeFi (finance without traditional banks), NFTs (digital ownership), GameFi (play-to-earn gaming).</li>
+                </ul>
+                <p class="mt-4">In essence, Dapps shift towards more open, user-centric applications, requiring a new approach to interaction and security, but unlocking powerful new possibilities.</p>
+            </div>
         </section>
 
     </main>
@@ -162,11 +404,9 @@
 
         // Active link highlighting
         const navLinks = document.querySelectorAll('.navbar .nav-link, #mobile-menu a');
-        // For specific pages, use the actual filename.
         const currentPage = window.location.pathname.split('/').pop() || 'index.html'; 
 
         navLinks.forEach(link => {
-            // Handle cases where href might be just "#" or empty
             const linkHref = link.getAttribute('href');
             if (!linkHref) return;
 
@@ -187,7 +427,6 @@
                     const dropdownLinks = dropdownContent.querySelectorAll('a');
                     let parentShouldBeActive = false;
                     
-                    // Check if the main link's href (e.g., smart-contracts.html) matches current page
                     if (linkHref.split('/').pop().split('#')[0] === currentPage) {
                         parentShouldBeActive = true;
                     } else { 
