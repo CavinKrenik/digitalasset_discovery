@@ -1,0 +1,541 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Crypto Chart Analysis & Trading - Knowledge Portal</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Oswald:wght@400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        /* Additional styles for tables if needed */
+        .comparison-table th, .comparison-table td {
+            border: 1px solid #374151; /* Tailwind gray-700 */
+            padding: 0.75rem; /* Tailwind p-3 */
+            text-align: left;
+        }
+        .comparison-table th {
+            background-color: #1F2937; /* Tailwind gray-800 */
+        }
+    </style>
+</head>
+<body class="bg-gray-900 text-gray-100">
+
+    <nav class="navbar fixed top-0 left-0 right-0 z-50">
+        <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-20">
+                <div class="flex-shrink-0">
+                    <a href="index.html" class="text-xl font-bold text-white hover:text-amber-400 transition-colors">Knowledge Portal</a>
+                </div>
+
+                <div class="hidden md:flex items-center space-x-1 lg:space-x-2">
+                    <div class="dropdown">
+                        <a href="index.html" class="nav-link">Blockchain Specialization</a>
+                        <div class="dropdown-content">
+                            <a href="blockchain-basics.html">Blockchain Basics</a>
+                            <a href="smart-contracts.html">Smart Contracts</a>
+                            <a href="dapps.html">DApps</a>
+                            <a href="blockchain-platforms.html">Platforms</a>
+                            <a href="applied-project.html">Applied Project</a>
+                        </div>
+                    </div>
+                    <div class="dropdown">
+                        <a href="crypto-chart-analysis.html" class="nav-link">Crypto Chart Analysis</a>
+                        <div class="dropdown-content">
+                            <a href="crypto-chart-analysis.html#module1-intro">M1: Foundations Intro</a>
+                            <a href="crypto-chart-analysis.html#module1-part1">M1 P1: Intro to TA</a>
+                            <a href="crypto-chart-analysis.html#module1-part2">M1 P2: Candlesticks</a>
+                            <a href="crypto-chart-analysis.html#module1-part3">M1 P3: Support/Resistance</a>
+                            <a href="crypto-chart-analysis.html#module1-part4">M1 P4: Fibonacci Tools</a>
+                            <a href="crypto-chart-analysis.html#module1-part5">M1 P5: Chart Patterns</a>
+                            <a href="crypto-chart-analysis.html#module3-intro">M3: Trading Strategies Intro</a>
+                            <a href="crypto-chart-analysis.html#module3-part1">M3 P1: Trading Plan</a>
+                            <a href="crypto-chart-analysis.html#module3-part2">M3 P2: Basic Strategies</a>
+                            <a href="crypto-chart-analysis.html#module3-part3">M3 P3: Risk Management</a>
+                            <a href="crypto-chart-analysis.html#module4-intro">M4: Practical App Intro</a>
+                            <a href="crypto-chart-analysis.html#module4-part1">M4 P1: Navigating Interfaces</a>
+                            <a href="crypto-chart-analysis.html#module4-part2">M4 P2: Order Types</a>
+                            <a href="crypto-chart-analysis.html#module4-part3">M4 P3: Paper Trading</a>
+                            <a href="crypto-chart-analysis.html#module5-intro">M5: Advanced Concepts</a>
+                            <a href="crypto-chart-analysis.html#final-summary">Final Summary</a>
+                        </div>
+                    </div>
+                    <a href="about.html" class="nav-link">About</a>
+                </div>
+
+                <div class="hidden md:block">
+                    <a href="index.html#courses-overview" class="get-started-btn px-4 py-2 rounded-md text-sm">
+                        GET STARTED
+                    </a>
+                </div>
+
+                <div class="md:hidden flex items-center">
+                    <button id="mobile-menu-button" class="text-gray-400 hover:text-white focus:outline-none focus:text-white">
+                        <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7" />
+                        </svg>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <div id="mobile-menu" class="md:hidden hidden bg-gray-800">
+            <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3">
+                <a href="index.html" class="text-gray-300 hover:bg-gray-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium">Blockchain Home</a>
+                <a href="blockchain-basics.html" class="text-gray-400 hover:bg-gray-700 hover:text-white block pl-6 pr-3 py-2 rounded-md text-sm">↳ Blockchain Basics</a>
+                <a href="smart-contracts.html" class="text-gray-400 hover:bg-gray-700 hover:text-white block pl-6 pr-3 py-2 rounded-md text-sm">↳ Smart Contracts</a>
+                <a href="dapps.html" class="text-gray-400 hover:bg-gray-700 hover:text-white block pl-6 pr-3 py-2 rounded-md text-sm">↳ DApps</a>
+                <a href="blockchain-platforms.html" class="text-gray-400 hover:bg-gray-700 hover:text-white block pl-6 pr-3 py-2 rounded-md text-sm">↳ Platforms</a>
+                <a href="applied-project.html" class="text-gray-400 hover:bg-gray-700 hover:text-white block pl-6 pr-3 py-2 rounded-md text-sm">↳ Applied Project</a>
+                
+                <a href="crypto-chart-analysis.html" class="text-gray-300 hover:bg-gray-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium mt-2">Crypto Chart Analysis</a>
+                <a href="crypto-chart-analysis.html#module1-part1" class="text-gray-400 hover:bg-gray-700 hover:text-white block pl-6 pr-3 py-2 rounded-md text-sm">↳ M1 P1: Intro to TA</a>
+                <a href="crypto-chart-analysis.html#module1-part2" class="text-gray-400 hover:bg-gray-700 hover:text-white block pl-6 pr-3 py-2 rounded-md text-sm">↳ M1 P2: Candlesticks</a>
+                <a href="crypto-chart-analysis.html#module1-part3" class="text-gray-400 hover:bg-gray-700 hover:text-white block pl-6 pr-3 py-2 rounded-md text-sm">↳ M1 P3: Support/Resistance</a>
+                <a href="crypto-chart-analysis.html#module1-part4" class="text-gray-400 hover:bg-gray-700 hover:text-white block pl-6 pr-3 py-2 rounded-md text-sm">↳ M1 P4: Fibonacci</a>
+                <a href="crypto-chart-analysis.html#module1-part5" class="text-gray-400 hover:bg-gray-700 hover:text-white block pl-6 pr-3 py-2 rounded-md text-sm">↳ M1 P5: Chart Patterns</a>
+                <a href="crypto-chart-analysis.html#module3-part1" class="text-gray-400 hover:bg-gray-700 hover:text-white block pl-6 pr-3 py-2 rounded-md text-sm">↳ M3 P1: Trading Plan</a>
+                <a href="crypto-chart-analysis.html#module3-part2" class="text-gray-400 hover:bg-gray-700 hover:text-white block pl-6 pr-3 py-2 rounded-md text-sm">↳ M3 P2: Basic Strategies</a>
+                <a href="crypto-chart-analysis.html#module3-part3" class="text-gray-400 hover:bg-gray-700 hover:text-white block pl-6 pr-3 py-2 rounded-md text-sm">↳ M3 P3: Risk Management</a>
+                <a href="crypto-chart-analysis.html#module4-part1" class="text-gray-400 hover:bg-gray-700 hover:text-white block pl-6 pr-3 py-2 rounded-md text-sm">↳ M4 P1: Navigating Interfaces</a>
+                <a href="crypto-chart-analysis.html#module4-part2" class="text-gray-400 hover:bg-gray-700 hover:text-white block pl-6 pr-3 py-2 rounded-md text-sm">↳ M4 P2: Order Types</a>
+                <a href="crypto-chart-analysis.html#module4-part3" class="text-gray-400 hover:bg-gray-700 hover:text-white block pl-6 pr-3 py-2 rounded-md text-sm">↳ M4 P3: Paper Trading</a>
+                <a href="crypto-chart-analysis.html#module5-intro" class="text-gray-400 hover:bg-gray-700 hover:text-white block pl-6 pr-3 py-2 rounded-md text-sm">↳ M5: Advanced Concepts</a>
+                <a href="crypto-chart-analysis.html#final-summary" class="text-gray-400 hover:bg-gray-700 hover:text-white block pl-6 pr-3 py-2 rounded-md text-sm">↳ Final Summary</a>
+
+                <a href="about.html" class="text-gray-300 hover:bg-gray-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium mt-2">About</a>
+                <a href="index.html#courses-overview" class="mt-2 get-started-btn block text-center w-full px-4 py-2 rounded-md text-sm">GET STARTED</a>
+            </div>
+        </div>
+    </nav>
+
+    <main class="container mx-auto px-4 sm:px-6 lg:px-8 py-12 content-padding">
+        <h1 class="page-title text-4xl sm:text-5xl font-bold text-white mb-6 text-center">Crypto Chart Analysis & Trading</h1>
+        
+        <section class="mb-12 bg-gray-800 p-6 md:p-8 rounded-lg shadow-xl">
+            <h2 class="section-title text-3xl font-semibold text-amber-400 mb-6">Important Disclaimer</h2>
+            <div class="text-red-400 leading-relaxed space-y-2 text-sm">
+                <p><strong>Trading cryptocurrencies involves significant risk of financial loss. Prices are highly volatile, and you can lose money.</strong></p>
+                <p>Technical analysis is not a predictive science. It's a tool for analyzing past market behavior to identify potential future probabilities. There are no guarantees.</p>
+                <p>This information is for educational purposes only and should not be considered financial advice. Always do your own thorough research (DYOR) and consider consulting with a qualified financial advisor before making any investment or trading decisions.</p>
+                <p>Practice is crucial. Understanding these concepts is one thing; applying them effectively takes time, practice (e.g., with paper trading), and discipline.</p>
+            </div>
+        </section>
+
+        <section id="module1-intro" class="mb-12">
+            <h2 class="page-title text-3xl sm:text-4xl font-bold text-white mb-8 text-center border-b-2 border-amber-400 pb-4">Module 1: Foundations of Crypto Chart Analysis</h2>
+
+            <article id="module1-part1" class="mb-12 bg-gray-800 p-6 md:p-8 rounded-lg shadow-xl">
+                <h3 class="section-title text-2xl font-semibold text-amber-400 mb-6">Part 1: Introduction to Technical Analysis (TA) for Crypto</h3>
+                <div class="text-gray-300 leading-relaxed space-y-4">
+                    <p>To begin, let's get a clear understanding of what technical analysis is in the context of cryptocurrency trading.</p>
+                    <h4 class="text-xl font-semibold text-amber-300 mt-4 mb-2">What is Technical Analysis (TA)?</h4>
+                    <p>Technical analysis is a method used to evaluate and forecast the potential future price movements of an asset (in this case, cryptocurrencies) by examining its past market data. The primary tools for TA are price charts and trading volume. Traders who use TA, known as technical analysts, believe that historical price patterns and market trends tend to repeat themselves and can provide insights into future behavior.</p>
+                    <p>Instead of looking at the "intrinsic value" of a crypto project (like its technology, team, or real-world use case), TA focuses on what the price is doing and how the market is behaving.</p>
+                    
+                    <h4 class="text-xl font-semibold text-amber-300 mt-4 mb-2">TA vs. Fundamental Analysis (FA) in Crypto:</h4>
+                    <ul class="list-disc list-inside ml-4 space-y-2">
+                        <li><strong>Technical Analysis (TA):</strong> Focuses on price charts, volume, patterns, and indicators. Assumes past activity indicates future movements and all info is priced in. Goal: Identify short-to-medium term trading opportunities. Answers: "What is likely to happen with the price?"</li>
+                        <li><strong>Fundamental Analysis (FA):</strong> Focuses on intrinsic value (project tech, team, tokenomics, adoption, news). Assumes price eventually reflects true value. Goal: Determine if crypto is undervalued/overvalued for long-term investment. Answers: "Why should this crypto have value?"</li>
+                    </ul>
+                    <p>Many traders use a combination of both TA and FA.</p>
+
+                    <h4 class="text-xl font-semibold text-amber-300 mt-4 mb-2">Key Assumptions of Technical Analysis:</h4>
+                    <ul class="list-disc list-inside ml-4 space-y-2">
+                        <li><strong>The Market Discounts Everything:</strong> All known information is already reflected in the current price.</li>
+                        <li><strong>Prices Move in Trends:</strong> Price movements follow identifiable trends (uptrends, downtrends, sideways).</li>
+                        <li><strong>History Tends to Repeat Itself:</strong> Market psychology leads to recurring chart patterns.</li>
+                    </ul>
+
+                    <h4 class="text-xl font-semibold text-amber-300 mt-4 mb-2">Common Chart Types in Crypto Trading:</h4>
+                    <ul class="list-disc list-inside ml-4 space-y-2">
+                        <li><strong>Line Charts:</strong> Simplest, connects closing prices. Good for long-term trends, lacks detail.</li>
+                        <li><strong>Bar Charts (OHLC):</strong> Shows Open, High, Low, Close for each period. More detail, less intuitive for sentiment.</li>
+                        <li><strong>Candlestick Charts:</strong> Most popular. Visually shows OHLC, body color indicates bullish/bearish sentiment. Forms basis for many patterns. We will focus heavily on these.</li>
+                    </ul>
+
+                    <h4 class="text-xl font-semibold text-amber-300 mt-4 mb-2">Understanding Timeframes:</h4>
+                    <p>Each bar/candlestick represents a chosen timeframe (e.g., 1-minute, 1-hour, 1-day). Shorter timeframes for scalpers (more "noise"), medium for swing traders, longer for position traders (more reliable signals). Many traders use Multiple Timeframe Analysis (MTFA): identify major trend on a long timeframe, then find entries on a shorter timeframe.</p>
+                </div>
+            </article>
+
+            <article id="module1-part2" class="mb-12 bg-gray-800 p-6 md:p-8 rounded-lg shadow-xl">
+                <h3 class="section-title text-2xl font-semibold text-amber-400 mb-6">Part 2: Mastering Candlestick Charts</h3>
+                <div class="text-gray-300 leading-relaxed space-y-4">
+                    <p>Candlestick charts provide a rich visual representation of price action and market sentiment.</p>
+                    <h4 class="text-xl font-semibold text-amber-300 mt-4 mb-2">Recap: Anatomy of a Candlestick</h4>
+                    <p>Each candlestick shows Open, High, Low, Close (OHLC) for a timeframe, visualized as:</p>
+                    <ul class="list-disc list-inside ml-4">
+                        <li><strong>Body:</strong> Rectangle showing range between open and close.</li>
+                        <li><strong>Wicks (Shadows/Tails):</strong> Lines above/below body showing high and low.</li>
+                    </ul>
+                    <h4 class="text-xl font-semibold text-amber-300 mt-4 mb-2">Bullish vs. Bearish Candlesticks</h4>
+                    <ul class="list-disc list-inside ml-4">
+                        <li><strong>Bullish (Buyers in Control):</strong> Close > Open. Typically Green/White. Indicates buying pressure.</li>
+                        <li><strong>Bearish (Sellers in Control):</strong> Close < Open. Typically Red/Black. Indicates selling pressure.</li>
+                    </ul>
+                    <h4 class="text-xl font-semibold text-amber-300 mt-4 mb-2">Basic Single Candlestick Patterns</h4>
+                    <ul class="list-disc list-inside ml-4 space-y-2">
+                        <li><strong>Marubozu:</strong> Full body, no/tiny wicks. Bullish (Green/White) = strong buying. Bearish (Red/Black) = strong selling. Shows strong conviction.</li>
+                        <li><strong>Spinning Top:</strong> Small body, long upper/lower wicks. Indicates indecision.</li>
+                        <li><strong>Doji:</strong> Open and close are identical/very close (thin/no body). Extreme indecision, potential reversal signal (needs confirmation).
+                            <ul class="list-circle list-inside ml-6">
+                                <li><em>Standard Doji (Star):</em> Plus sign/cross.</li>
+                                <li><em>Long-Legged Doji:</em> Long wicks, significant volatility but indecision.</li>
+                                <li><em>Dragonfly Doji:</em> Open/close at high, long lower wick ("T"). Potential bullish reversal after downtrend.</li>
+                                <li><em>Gravestone Doji:</em> Open/close at low, long upper wick (inverted "T"). Potential bearish reversal after uptrend.</li>
+                            </ul>
+                        </li>
+                        <li><strong>Hammer (Bullish Reversal):</strong> Appears in downtrend. Small body near top, long lower wick (at least 2x body), little/no upper wick. Suggests buyers stepped in.</li>
+                        <li><strong>Hanging Man (Bearish Reversal):</strong> Appears in uptrend. Same shape as Hammer. Warns uptrend might be losing strength.</li>
+                        <li><strong>Inverted Hammer (Potential Bullish Reversal):</strong> Appears in downtrend. Small body near bottom, long upper wick, little/no lower wick. Tentative bullish sign.</li>
+                        <li><strong>Shooting Star (Bearish Reversal):</strong> Appears in uptrend. Same shape as Inverted Hammer. Potential top reversal signal.</li>
+                    </ul>
+                    <p><strong>Note:</strong> Single candlestick patterns are more reliable at support/resistance, with volume confirmation, and confirmed by subsequent candles.</p>
+                </div>
+            </article>
+
+            <article id="module1-part3" class="mb-12 bg-gray-800 p-6 md:p-8 rounded-lg shadow-xl">
+                <h3 class="section-title text-2xl font-semibold text-amber-400 mb-6">Part 3: Key Chart Elements: Support, Resistance, and Trendlines</h3>
+                <div class="text-gray-300 leading-relaxed space-y-4">
+                    <h4 class="text-xl font-semibold text-amber-300 mt-4 mb-2">1. Support Levels</h4>
+                    <p>A price "floor" where buying interest tends to overcome selling pressure, causing a downtrend to pause or reverse. Formed by previous lows, congestion areas, or psychological round numbers. Traders may buy near support. A break below is bearish; broken support can become resistance.</p>
+                    <h4 class="text-xl font-semibold text-amber-300 mt-4 mb-2">2. Resistance Levels</h4>
+                    <p>A price "ceiling" where selling interest tends to overcome buying pressure, causing an uptrend to pause or reverse. Formed by previous highs, congestion areas, or psychological round numbers. Traders may sell near resistance. A break above is bullish; broken resistance can become support.</p>
+                    <h4 class="text-xl font-semibold text-amber-300 mt-4 mb-2">Identifying Support & Resistance:</h4>
+                    <p>Look left on the chart for significant peaks/troughs. Draw horizontal lines/zones. More touches = stronger level. Volume confirmation is key. Longer timeframe levels are more significant.</p>
+                    <h4 class="text-xl font-semibold text-amber-300 mt-4 mb-2">3. Trendlines</h4>
+                    <p>Lines connecting price points to show the prevailing trend and act as dynamic support/resistance.</p>
+                    <ul class="list-disc list-inside ml-4 space-y-2">
+                        <li><strong>Uptrend Line (Bullish):</strong> Connects higher lows (acts as dynamic support).</li>
+                        <li><strong>Downtrend Line (Bearish):</strong> Connects lower highs (acts as dynamic resistance).</li>
+                        <li><strong>Price Channels:</strong> Two parallel trendlines containing price action.</li>
+                    </ul>
+                    <p>A decisive break of a trendline (especially on high volume) can signal a trend change. Retests of broken trendlines can offer confirmation.</p>
+                </div>
+            </article>
+
+            <article id="module1-part4" class="mb-12 bg-gray-800 p-6 md:p-8 rounded-lg shadow-xl">
+                <h3 class="section-title text-2xl font-semibold text-amber-400 mb-6">Part 4: Fibonacci Tools (Fib)</h3>
+                <div class="text-gray-300 leading-relaxed space-y-4">
+                    <p>Based on the Fibonacci sequence (0,1,1,2,3,5,8...) and the Golden Ratio (~1.618 or 0.618), these tools identify potential support, resistance, and price targets.</p>
+                    <h4 class="text-xl font-semibold text-amber-300 mt-4 mb-2">1. Fibonacci Retracement</h4>
+                    <p>Used after a significant price move (impulse) to identify where a pullback (retracement) might stop before continuing the trend. Drawn from swing low to swing high in an uptrend, or swing high to swing low in a downtrend.</p>
+                    <p><strong>Key Levels:</strong> 23.6%, 38.2%, 50% (not a true Fib ratio but widely used), 61.8% (Golden Ratio), 78.6%. These act as potential support (in uptrend pullback) or resistance (in downtrend rally).</p>
+                    
+                    <h4 class="text-xl font-semibold text-amber-300 mt-4 mb-2">2. Fibonacci Extension</h4>
+                    <p>Used to project potential price targets after an initial move and a retracement. Requires three points: start of initial move (A), end of initial move (B), and end of retracement (C).</p>
+                    <p><strong>Key Levels:</strong> 100%, 127.2%, 161.8% (Golden Extension), 200%, 261.8%. These act as potential areas where the next price move might stall or reverse.</p>
+
+                    <h4 class="text-xl font-semibold text-amber-300 mt-4 mb-2">Practical Tips:</h4>
+                    <p>Confluence (alignment with other indicators/levels) is key. Treat levels as zones. Context matters (trending markets). Always look for price action confirmation. Limitations include subjectivity in drawing and potential for self-fulfilling prophecy. Use with other analysis, not in isolation.</p>
+                </div>
+            </article>
+            
+            <article id="module1-part5" class="mb-12 bg-gray-800 p-6 md:p-8 rounded-lg shadow-xl">
+                <h3 class="section-title text-2xl font-semibold text-amber-400 mb-6">Part 5: Chart Patterns</h3>
+                <div class="text-gray-300 leading-relaxed space-y-4">
+                    <p>Recognizable formations created by price movements that can help forecast future direction. They reflect market psychology.</p>
+                    <h4 class="text-xl font-semibold text-amber-300 mt-4 mb-2">A. Continuation Patterns (Suggest trend will resume)</h4>
+                    <ul class="list-disc list-inside ml-4 space-y-2">
+                        <li><strong>Triangles:</strong>
+                            <ul class="list-circle list-inside ml-6">
+                                <li><em>Symmetrical:</em> Converging lines, breakout often continues prior trend.</li>
+                                <li><em>Ascending:</em> Flat top (resistance), rising bottom (support). Bullish, anticipates upside breakout.</li>
+                                <li><em>Descending:</em> Flat bottom (support), falling top (resistance). Bearish, anticipates downside breakdown.</li>
+                            </ul>
+                        </li>
+                        <li><strong>Flags & Pennants:</strong> Short-term consolidations after a sharp price move (flagpole). Flags are rectangular; pennants are small triangles. Bull flags/pennants in uptrends; bear flags/pennants in downtrends.</li>
+                        <li><strong>Rectangles (Ranges):</strong> Sideways movement between horizontal support and resistance. Breakout often continues prior trend.</li>
+                    </ul>
+                    <h4 class="text-xl font-semibold text-amber-300 mt-4 mb-2">B. Reversal Patterns (Suggest trend will change)</h4>
+                     <ul class="list-disc list-inside ml-4 space-y-2">
+                        <li><strong>Head and Shoulders Top (Bearish):</strong> Three peaks (left shoulder, higher head, right shoulder) with a neckline connecting troughs. Break below neckline confirms.</li>
+                        <li><strong>Inverse Head and Shoulders (Bullish):</strong> Three troughs (left shoulder, lower head, right shoulder) with a neckline connecting peaks. Break above neckline confirms.</li>
+                        <li><strong>Double Top (Bearish "M"):</strong> Two peaks at similar levels. Break below trough support confirms.</li>
+                        <li><strong>Double Bottom (Bullish "W"):</strong> Two troughs at similar levels. Break above peak resistance confirms.</li>
+                        <li><strong>Triple Tops/Bottoms:</strong> Stronger versions with three peaks/troughs.</li>
+                        <li><strong>Wedges:</strong>
+                            <ul class="list-circle list-inside ml-6">
+                                <li><em>Rising Wedge:</em> Converging upward lines (lower support steeper). Typically bearish.</li>
+                                <li><em>Falling Wedge:</em> Converging downward lines (upper resistance steeper). Typically bullish.</li>
+                            </ul>
+                        </li>
+                    </ul>
+                    <p><strong>Importance of Confirmation:</strong> Wait for decisive breakout/breakdown, ideally with increased volume. Retests can offer confirmation. Beware of false breakouts. Use patterns in context with other analysis.</p>
+                </div>
+            </article>
+        </section> <section id="module3-intro" class="mb-12">
+            <h2 class="page-title text-3xl sm:text-4xl font-bold text-white mb-8 text-center border-b-2 border-amber-400 pb-4">Module 3: Trading Strategies and Risk Management</h2>
+            
+            <article id="module3-part1" class="mb-12 bg-gray-800 p-6 md:p-8 rounded-lg shadow-xl">
+                <h3 class="section-title text-2xl font-semibold text-amber-400 mb-6">Part 1: Developing a Trading Plan</h3>
+                <div class="text-gray-300 leading-relaxed space-y-4">
+                    <p>A trading plan is your personalized roadmap for objective decisions, emotional management, and discipline. Trading without one is risky.</p>
+                    <h4 class="text-xl font-semibold text-amber-300 mt-4 mb-2">Key Components:</h4>
+                    <ul class="list-disc list-inside ml-4 space-y-3">
+                        <li><strong>Define Trading Goals & Objectives:</strong> Be specific and realistic (e.g., capital growth %, profit targets, adherence to rules). Clear goals provide direction.</li>
+                        <li><strong>Understand & Define Risk Tolerance:</strong> How much can you afford to lose? What's your emotional capacity for losses? This dictates strategy, capital per trade, and assets.</li>
+                        <li><strong>Capital Management & Allocation:</strong> Determine trading capital (separate from essential funds). Risk per trade (e.g., 1-2% of capital) is crucial for survival.</li>
+                        <li><strong>Choose Trading Style:</strong> Align with personality, risk tolerance, time commitment (Scalping, Day Trading, Swing Trading, Position Trading/Investing).</li>
+                        <li><strong>Select Trading Strategy & Tools:</strong> Define entry/exit conditions, indicators, chart patterns, and cryptocurrencies to trade. A clear strategy avoids impulsive decisions.</li>
+                        <li><strong>Keep a Trading Journal:</strong> Detailed record of trades (date, crypto, entry/exit, stop-loss, size, reason, outcome, emotions, lessons). Powerful for learning, identifying patterns, and refining strategy.</li>
+                        <li><strong>Stay Informed & Adaptable:</strong> Continuously educate yourself. Review and adjust your plan with experience and changing market conditions.</li>
+                    </ul>
+                </div>
+            </article>
+
+            <article id="module3-part2" class="mb-12 bg-gray-800 p-6 md:p-8 rounded-lg shadow-xl">
+                <h3 class="section-title text-2xl font-semibold text-amber-400 mb-6">Part 2: Basic Trading Strategies using Technical Analysis</h3>
+                <div class="text-gray-300 leading-relaxed space-y-4">
+                    <p><strong>Important Notes:</strong> Simplicity is key for beginners. No strategy is 100% effective. Backtest and paper trade before risking real money. ALWAYS use with risk management.</p>
+                    <h4 class="text-xl font-semibold text-amber-300 mt-4 mb-2">1. Trend Following Strategy</h4>
+                    <p>Identify an established trend (uptrend: higher highs/lows; downtrend: lower highs/lows) using price action, trendlines, or Moving Averages (MAs). Trade in the direction of the trend.</p>
+                    <p><strong>Entry (Uptrend Example):</strong> On pullbacks to uptrend line or key rising MA (acting as support), confirmed by bullish candlestick. Or, breakout from consolidation pattern within the uptrend.</p>
+                    <p><strong>Stop-Loss (Uptrend Long):</strong> Below recent swing low, trendline, or supporting MA.</p>
+                    <p><strong>Take-Profit:</strong> Previous resistance, measured move from pattern, or trailing stop-loss.</p>
+
+                    <h4 class="text-xl font-semibold text-amber-300 mt-4 mb-2">2. Range Trading Strategy</h4>
+                    <p>Used in sideways markets bouncing between clear support and resistance.</p>
+                    <p><strong>Entry:</strong> Buy at support with bullish bounce confirmation; Sell/Short at resistance with bearish rejection confirmation.</p>
+                    <p><strong>Stop-Loss:</strong> Just below support for buys; just above resistance for sells.</p>
+                    <p><strong>Take-Profit:</strong> Near the opposite boundary of the range. Be ready for eventual breakout/breakdown.</p>
+
+                    <h4 class="text-xl font-semibold text-amber-300 mt-4 mb-2">3. Breakout Trading Strategy</h4>
+                    <p>Enter when price breaks out of a chart pattern or through significant support/resistance, expecting strong continuation.</p>
+                    <p><strong>Entry:</strong> On decisive close beyond the key level. <strong>Volume confirmation is CRUCIAL.</strong> Optional: wait for a retest of the broken level.</p>
+                    <p><strong>Stop-Loss:</strong> Just below breakout level (upside) or above breakdown level (downside).</p>
+                    <p><strong>Take-Profit:</strong> Measured move from pattern height or next significant S/R level.</p>
+
+                    <h4 class="text-xl font-semibold text-amber-300 mt-4 mb-2">4. Pullback/Retracement Trading Strategy</h4>
+                    <p>Variation of trend following. Wait for temporary pullback within an established trend for better risk/reward entry.</p>
+                    <p><strong>Identify Pullback Levels (Uptrend):</strong> Previous minor support, key MAs, Fibonacci retracement levels (38.2%, 50%, 61.8%).</p>
+                    <p><strong>Entry (Uptrend):</strong> Bullish candlestick pattern at a confluence of pullback levels.</p>
+                    <p><strong>Stop-Loss:</strong> Below the low of the pullback/support level.</p>
+                    <p><strong>Take-Profit:</strong> Aim for new high in trend direction or use Fibonacci extensions.</p>
+
+                    <h4 class="text-xl font-semibold text-amber-300 mt-4 mb-2">The Power of Confluence:</h4>
+                    <p>Signals are stronger when multiple indicators/patterns align (e.g., bullish candle at Fib support + MA support + high volume).</p>
+                </div>
+            </article>
+
+            <article id="module3-part3" class="mb-12 bg-gray-800 p-6 md:p-8 rounded-lg shadow-xl">
+                <h3 class="section-title text-2xl font-semibold text-amber-400 mb-6">Part 3: Risk Management Essentials</h3>
+                <div class="text-gray-300 leading-relaxed space-y-4">
+                    <p>Effective risk management is arguably the most critical factor for long-term survival and potential success in crypto trading. Its primary goal is capital preservation.</p>
+                    
+                    <h4 class="text-xl font-semibold text-amber-300 mt-4 mb-2">1. Understanding and Accepting Risk: The Foundation</h4>
+                    <ul class="list-disc list-inside ml-4">
+                        <li><strong>Crypto is Volatile:</strong> Prices can swing dramatically. This presents opportunities and significant risks.</li>
+                        <li><strong>You WILL Have Losing Trades:</strong> No trader wins every trade. The key is to ensure losses are small and manageable.</li>
+                        <li><strong>Never Risk More Than You Can Afford to Lose:</strong> This is the golden rule. Trading capital should be money that, if lost, would not impact your essential financial well-being.</li>
+                    </ul>
+
+                    <h4 class="text-xl font-semibold text-amber-300 mt-4 mb-2">2. Position Sizing: How Much to Risk Per Trade</h4>
+                    <p>Determining how much capital to allocate to a single trade based on your willingness to lose if it goes against you.</p>
+                    <p><strong>The Percentage Risk Model (Recommended for Beginners):</strong> Risk a small, fixed percentage (e.g., 1-2%) of your total trading capital per trade.</p>
+                    <p><em>Calculation Example:</em> Trading capital = $1,000; Risk = 1%; Max loss = $10. If buying BTC at $60,000 with stop-loss at $59,500 (risk per unit = $500), position size = $10 / $500 = 0.02 BTC.</p>
+                    <p><strong>Benefits:</strong> Protects capital, forces discipline, allows you to withstand losing streaks.</p>
+
+                    <h4 class="text-xl font-semibold text-amber-300 mt-4 mb-2">3. Stop-Loss Orders: Your Safety Net</h4>
+                    <p>An instruction to automatically close your trade at a predetermined price if the market moves against you, limiting potential loss.</p>
+                    <p><strong>Purpose:</strong> Limit losses, remove emotion from exiting losers.</p>
+                    <p><strong>Types:</strong> Stop-Market (more likely to fill, can have slippage), Stop-Limit (control fill price, may not fill in fast markets).</p>
+                    <p><strong>Placement Strategies:</strong> Below support/above resistance, outside chart patterns, based on Moving Averages, Volatility-Based (e.g., ATR), or fixed percentage (less adaptive).</p>
+                    <p><strong>Crucial Rule:</strong> Never widen your stop-loss once set based on your plan.</p>
+
+                    <h4 class="text-xl font-semibold text-amber-300 mt-4 mb-2">4. Take-Profit Orders: Locking in Gains</h4>
+                    <p>An instruction to automatically close your trade at a specific profit target.</p>
+                    <p><strong>Purpose:</strong> Secure profits, automate exits, remove emotion from taking profit.</p>
+                    <p><strong>Placement Strategies:</strong> Near upcoming support/resistance, chart pattern objectives, Fibonacci extension levels, fixed Risk/Reward Ratio.</p>
+
+                    <h4 class="text-xl font-semibold text-amber-300 mt-4 mb-2">5. Risk/Reward Ratio (RRR)</h4>
+                    <p>The ratio of potential profit (Reward) to potential loss (Risk).</p>
+                    <p><strong>Calculation:</strong> RRR = Reward / Risk. (e.g., Risk $5 to make $15 = 3:1 RRR).</p>
+                    <p><strong>Importance:</strong> Aim for positive RRR (e.g., >= 2:1). You don't need to win every trade to be profitable with good RRR. Helps filter low-quality setups.</p>
+                    
+                    <h4 class="text-xl font-semibold text-amber-300 mt-4 mb-2">6. Diversification (Briefly, in a Trading Context)</h4>
+                    <p>Don't put all trading capital into one crypto or setup. For beginners, mastering a strategy with one or two liquid cryptos first is often better.</p>
+
+                    <h4 class="text-xl font-semibold text-amber-300 mt-4 mb-2">7. Understanding Leverage and Margin Trading Risks (A Strong Caution)</h4>
+                    <p>Leverage allows trading with borrowed capital, amplifying profits AND losses. A small adverse move can lead to large loss or liquidation. <strong>Extremely risky and NOT recommended for beginners.</strong> Focus on spot trading first.</p>
+
+                    <h4 class="text-xl font-semibold text-amber-300 mt-4 mb-2">8. Emotional Discipline: Sticking to Your Risk Plan</h4>
+                    <p>Fear and greed are enemies. Your trading plan (with predefined risk rules) is your anchor against emotional decisions. Review trades in your journal to ensure adherence to risk rules.</p>
+                    <p class="mt-4">Effective risk management is about establishing rules to protect your capital and having the discipline to follow them consistently.</p>
+                </div>
+            </article>
+        </section> <section id="module4-intro" class="mb-12">
+            <h2 class="page-title text-3xl sm:text-4xl font-bold text-white mb-8 text-center border-b-2 border-amber-400 pb-4">Module 4: Practical Application on Trading Platforms</h2>
+            <div class="bg-gray-800 p-6 md:p-8 rounded-lg shadow-xl mb-6">
+                <p class="text-lg text-gray-300 leading-relaxed">This module is all about bridging the gap between the charting concepts and indicators we've learned and how you actually use them on a real trading platform. We'll focus on the general layout and tools you'd find on exchanges like Kraken Pro and Coinbase Advanced, which are designed for more active traders.</p>
+            </div>
+
+            <article id="module4-part1" class="mb-12 bg-gray-800 p-6 md:p-8 rounded-lg shadow-xl">
+                <h3 class="section-title text-2xl font-semibold text-amber-400 mb-6">Part 1: Navigating Trading Interfaces (General Overview)</h3>
+                <div class="text-gray-300 leading-relaxed space-y-4">
+                    <p>When you first open an advanced trading interface, it can look overwhelming. However, most platforms share common core components:</p>
+                    <ul class="list-disc list-inside ml-4 space-y-3">
+                        <li><strong>Asset/Market Selection Area:</strong> Choose your crypto trading pair (e.g., BTC/USD). Usually a searchable list.</li>
+                        <li><strong>Price Chart:</strong> Central display of price action (candlesticks). Includes timeframe selection, drawing tools, and indicator menus. Platforms like Coinbase Advanced and Kraken Pro often integrate sophisticated charting (e.g., TradingView).</li>
+                        <li><strong>Order Book (Market Depth):</strong> Real-time list of current buy (bid) and sell (ask) orders, organized by price. Shows supply/demand and potential short-term S/R.</li>
+                        <li><strong>Order Entry/Placement Form:</strong> Create and submit buy/sell orders (Market, Limit, Stop-Loss, etc.). Specify price, amount, and review estimated costs/proceeds.</li>
+                        <li><strong>Trade History / Recent Trades:</strong> Real-time feed of recently executed trades.</li>
+                        <li><strong>Open Orders / Order Management Section:</strong> View, modify, or cancel your active orders that haven't filled.</li>
+                        <li><strong>Positions Section (if applicable):</strong> Shows your open margin/derivatives positions, PnL, etc. For spot, it's your asset balance.</li>
+                        <li><strong>Account Balance / Portfolio Overview:</strong> Your available balances and total portfolio value.</li>
+                        <li><strong>Trading History / Order History:</strong> Log of all past trades and order activity for your journal.</li>
+                    </ul>
+                    <p class="mt-4"><strong>Key Takeaway for Beginners:</strong> Focus on selecting pairs, understanding the chart, the order form, and where to see open orders/trade history.</p>
+                </div>
+            </article>
+
+            <article id="module4-part2" class="mb-12 bg-gray-800 p-6 md:p-8 rounded-lg shadow-xl">
+                <h3 class="section-title text-2xl font-semibold text-amber-400 mb-6">Part 2: Order Types and Execution</h3>
+                <div class="text-gray-300 leading-relaxed space-y-4">
+                    <p>An order is an instruction to buy or sell a cryptocurrency under certain conditions. Common types include:</p>
+                    <h4 class="text-xl font-semibold text-amber-300 mt-4 mb-2">a. Market Order:</h4>
+                    <p>Buy/sell immediately at the best available current market price. <strong>Pros:</strong> Guaranteed fill. <strong>Cons:</strong> No price guarantee (slippage possible). Use with caution, especially when precise entry is needed.</p>
+                    <h4 class="text-xl font-semibold text-amber-300 mt-4 mb-2">b. Limit Order:</h4>
+                    <p>Buy/sell at a specific price or better. <strong>Buy Limit:</strong> Set max price willing to pay (placed below current price). <strong>Sell Limit:</strong> Set min price willing to accept (placed above current price). <strong>Pros:</strong> Price control. <strong>Cons:</strong> No guarantee of execution if price doesn't reach your limit.</p>
+                    <h4 class="text-xl font-semibold text-amber-300 mt-4 mb-2">c. Stop-Loss Orders (Crucial for Risk Management):</h4>
+                    <p>To limit potential loss on an open position.</p>
+                    <ul class="list-disc list-inside ml-4">
+                        <li><strong>Stop-Market Order ("Stop"):</strong> Becomes a market order when stop price is hit. <strong>Pros:</strong> High fill likelihood. <strong>Cons:</strong> Slippage.</li>
+                        <li><strong>Stop-Limit Order:</strong> Becomes a limit order when stop price is hit. <strong>Pros:</strong> Controls fill price post-trigger. <strong>Cons:</strong> May not fill if market moves rapidly past limit price.</li>
+                    </ul>
+                    <h4 class="text-xl font-semibold text-amber-300 mt-4 mb-2">d. Take-Profit Orders (Securing Gains):</h4>
+                    <p>Automatically close a profitable position at a target. Typically a Limit Order (Sell Limit for long, Buy Limit for short).</p>
+                    <h4 class="text-xl font-semibold text-amber-300 mt-4 mb-2">e. Trailing Stop Orders (More Advanced):</h4>
+                    <p>Stop-loss that automatically trails the market price by a set amount/percentage when price moves favorably. Protects profits while allowing trends to run.</p>
+                    <h4 class="text-xl font-semibold text-amber-300 mt-4 mb-2">f. Time-in-Force (TIF) Options:</h4>
+                    <p>How long an order remains active (e.g., Good 'Til Canceled - GTC, Immediate Or Cancel - IOC, Fill Or Kill - FOK).</p>
+                    <p class="mt-3"><strong>Placing Orders:</strong> Select pair, order type, enter price (if needed), amount, review, and confirm. Monitor in "Open Orders" and "Trade History."</p>
+                </div>
+            </article>
+
+            <article id="module4-part3" class="mb-12 bg-gray-800 p-6 md:p-8 rounded-lg shadow-xl">
+                <h3 class="section-title text-2xl font-semibold text-amber-400 mb-6">Part 3: Paper Trading and Backtesting – The Importance of Practice</h3>
+                <div class="text-gray-300 leading-relaxed space-y-4">
+                    <p>Before live trading, practice with virtual money and historical data.</p>
+                    <h4 class="text-xl font-semibold text-amber-300 mt-4 mb-2">1. What is Paper Trading?</h4>
+                    <p>Simulated trading with virtual money in a real-time or demo environment. Use demo accounts or TradingView's paper trading. Purpose: practice order execution, test strategies, build confidence/discipline, identify flaws, familiarize with market dynamics.</p>
+                    <h4 class="text-xl font-semibold text-amber-300 mt-4 mb-2">2. What is Backtesting?</h4>
+                    <p>Applying a trading strategy to historical price data to see past performance. Can be manual (candle by candle on charts) or automated (software/coding). Purpose: assess historical viability, identify performance metrics, refine strategy, build confidence.</p>
+                    <h4 class="text-xl font-semibold text-amber-300 mt-4 mb-2">3. Importance of Practice:</h4>
+                    <p>Develops skills, builds discipline, mitigates costly mistakes, sets realistic expectations, validates strategies.</p>
+                    <h4 class="text-xl font-semibold text-amber-300 mt-4 mb-2">4. Effective Paper Trading:</h4>
+                    <p>Treat it seriously with realistic capital/risk. Keep a detailed journal. Be patient and consistent across market conditions. Acknowledge emotional differences from real trading.</p>
+                    <h4 class="text-xl font-semibold text-amber-300 mt-4 mb-2">5. Effective (Manual) Backtesting:</h4>
+                    <p>Have crystal-clear rules. Use sufficient historical data. Avoid hindsight bias (cover right side of chart). Record meticulously. Analyze results (win rate, RRR, drawdown).</p>
+                    <p><strong>Limitations:</strong> Past performance isn't future guarantee. Slippage/fees often not in simple backtests. Risk of over-optimization.</p>
+                    <h4 class="text-xl font-semibold text-amber-300 mt-4 mb-2">6. Transitioning to Live Trading:</h4>
+                    <p>Only after a defined plan, consistent positive simulated results, understanding risks, and platform comfort. Start with very small real capital.</p>
+                </div>
+            </article>
+        </section> <section id="module5-intro" class="mb-12 bg-gray-800 p-6 md:p-8 rounded-lg shadow-xl">
+            <h2 class="section-title text-3xl font-semibold text-amber-400 mb-6">Module 5: Advanced Concepts and Continuous Learning (Brief Overview)</h2>
+            <div class="text-gray-300 leading-relaxed space-y-4">
+                <p>The fundamentals provide a strong start. As you gain experience, you might explore:</p>
+                <ul class="list-disc list-inside ml-4 space-y-2">
+                    <li><strong>More Advanced Charting Theories:</strong> Elliott Wave Theory, Wyckoff Method, Harmonic Patterns.</li>
+                    <li><strong>Volume Profile / Market Profile:</strong> Analyzing volume at price levels.</li>
+                    <li><strong>Advanced Indicator Usage:</strong> Nuanced techniques, other indicators (Ichimoku Cloud, Keltner Channels).</li>
+                    <li><strong>Order Flow Analysis:</strong> Real-time order book and trade data analysis.</li>
+                    <li><strong>Inter-Market Analysis:</strong> How different markets influence crypto.</li>
+                    <li><strong>Quantitative Analysis & Algorithmic Trading:</strong> Statistical methods and automated trading.</li>
+                    <li><strong>Adapting to Evolving Market Conditions:</strong> Strategies need to adapt.</li>
+                    <li><strong>Ongoing Psychological Development:</strong> Mastering trading psychology is a lifelong journey.</li>
+                </ul>
+                <p><strong>Where to Continue Learning:</strong> Reputable books, educational websites/courses (be wary of "get rich quick" schemes), practice & journaling, and cautious community engagement.</p>
+            </div>
+        </section>
+
+        <section id="final-summary" class="mb-12 bg-gray-800 p-6 md:p-8 rounded-lg shadow-xl">
+            <h2 class="section-title text-3xl font-semibold text-amber-400 mb-6">Final Summary: Crypto Chart Trading Course Key Takeaways</h2>
+            <div class="text-gray-300 leading-relaxed space-y-4">
+                <h4 class="text-xl font-semibold text-amber-300 mt-4 mb-2">Module 1: Foundations</h4>
+                <p>TA is a tool, not a crystal ball. Candlesticks are primary visuals. Basic patterns give clues. Support/Resistance are key levels. Trendlines define direction. Volume confirms price.</p>
+                <h4 class="text-xl font-semibold text-amber-300 mt-4 mb-2">Module 2 (Assumed from context, though not explicitly detailed in prompt for this update): Essential Indicators</h4>
+                <p>Moving Averages show trend. Oscillators (RSI, MACD) measure momentum/overbought-oversold. Fibonacci tools identify potential S/R and targets. Chart Patterns reflect market psychology (Continuation & Reversal). Confirm patterns with volume/breakouts.</p>
+                <h4 class="text-xl font-semibold text-amber-300 mt-4 mb-2">Module 3: Trading Strategies & Risk Management</h4>
+                <p>A Trading Plan is non-negotiable. Basic strategies combine tools (Trend Following, Range, Breakout). RISK MANAGEMENT IS PARAMOUNT: Position Sizing (1-2% rule), Stop-Losses (essential!), Take-Profits, Risk/Reward Ratio (aim >=2:1). Avoid leverage as a beginner. Control emotions (fear/greed).</p>
+                <h4 class="text-xl font-semibold text-amber-300 mt-4 mb-2">Module 4: Practical Application</h4>
+                <p>Familiarize with trading interfaces (chart, order book, order form). Practice using charting tools. Master Order Types (Market, Limit, Stop-Loss, Take-Profit). PAPER TRADING & BACKTESTING are crucial before live trading. Transition to live with very small capital.</p>
+                <p class="mt-6 font-semibold text-red-400">Final Word of Caution: Trading cryptocurrencies is highly speculative and carries a substantial risk of loss. This information is for educational purposes only and is not financial advice. Always DYOR, never invest more than you can afford to lose, and consider consulting a qualified financial professional. Success requires continuous learning, discipline, robust risk management, and emotional control.</p>
+            </div>
+        </section>
+
+    </main>
+
+    <footer class="bg-gray-800 border-t border-gray-700 mt-20">
+        <div class="container mx-auto px-4 sm:px-6 lg:px-8 py-8 text-center text-gray-400 text-sm">
+            <p>&copy; <span id="currentYear"></span> Knowledge Portal. All Rights Reserved.</p>
+            <p class="mt-1">Inspired by Cavin's Thirst For Knowledge.</p>
+        </div>
+    </footer>
+
+    <script>
+        // Mobile menu toggle
+        const mobileMenuButton = document.getElementById('mobile-menu-button');
+        const mobileMenu = document.getElementById('mobile-menu');
+
+        if (mobileMenuButton && mobileMenu) {
+            mobileMenuButton.addEventListener('click', () => {
+                mobileMenu.classList.toggle('hidden');
+            });
+        }
+
+        // Set current year in footer
+        const currentYearElement = document.getElementById('currentYear');
+        if (currentYearElement) {
+            currentYearElement.textContent = new Date().getFullYear();
+        }
+        
+        // Active link highlighting
+        const navLinks = document.querySelectorAll('.navbar .nav-link, #mobile-menu a');
+        const currentPage = window.location.pathname.split('/').pop() || 'index.html'; 
+
+        navLinks.forEach(link => {
+            const linkHref = link.getAttribute('href');
+            if (!linkHref) return;
+
+            const linkPage = linkHref.split('/').pop().split('#')[0] || 'index.html';
+
+            if (linkPage === currentPage) {
+                link.classList.add('active'); 
+                if(link.closest('#mobile-menu')) {
+                     link.classList.add('bg-gray-900', 'text-white'); 
+                } else if (link.classList.contains('nav-link')) { 
+                    link.classList.add('text-white'); 
+                }
+            }
+
+            if (link.classList.contains('nav-link')) {
+                const dropdownContent = link.nextElementSibling;
+                if (dropdownContent && dropdownContent.classList.contains('dropdown-content')) {
+                    const dropdownLinks = dropdownContent.querySelectorAll('a');
+                    let parentShouldBeActive = false;
+                    
+                    if (linkHref.split('/').pop().split('#')[0] === currentPage) {
+                        parentShouldBeActive = true;
+                    } else { 
+                        dropdownLinks.forEach(ddLink => {
+                            const ddLinkHref = ddLink.getAttribute('href');
+                            if (!ddLinkHref) return;
+                            const ddLinkPage = ddLinkHref.split('/').pop().split('#')[0];
+                            if (ddLinkPage === currentPage) {
+                                parentShouldBeActive = true;
+                            }
+                        });
+                    }
+                    if (parentShouldBeActive) {
+                        link.classList.add('active', 'text-white');
+                    }
+                }
+            }
+        });
+    </script>
+
+</body>
+</html>
