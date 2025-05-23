@@ -21,6 +21,15 @@
 </head>
 <body class="bg-gray-900 text-gray-100">
 
+    <aside id="course-sidebar" class="sticky-sidebar hidden md:block">
+        <h4>Table of Contents</h4>
+        <nav>
+            <ul id="sidebar-links">
+                <!-- Links will be populated by JavaScript -->
+            </ul>
+        </nav>
+    </aside>
+
     <nav class="navbar fixed top-0 left-0 right-0 z-50">
         <div class="container mx-auto px-4 sm:px-6 lg:px-8">
             <div class="flex items-center justify-between h-20">
@@ -109,7 +118,7 @@
         </div>
     </nav>
 
-    <main class="container mx-auto px-4 sm:px-6 lg:px-8 py-12 content-padding">
+    <main class="main-content-with-sidebar container mx-auto px-4 sm:px-6 lg:px-8 py-12 content-padding">
         <h1 class="page-title text-4xl sm:text-5xl font-bold text-white mb-6 text-center">Crypto Chart Analysis & Trading</h1>
         
         <section class="mb-12 bg-gray-800 p-6 md:p-8 rounded-lg shadow-xl">
@@ -536,6 +545,6 @@
             }
         });
     </script>
-
+    <script src="sidebar-nav.js" defer></script>
 </body>
 </html>

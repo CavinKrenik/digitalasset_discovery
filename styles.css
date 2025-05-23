@@ -132,3 +132,71 @@ body {
     /* Tailwind classes bg-gray-900 and text-white are applied via JS for mobile active links */
 /* } */
 
+/* Sticky Sidebar Navigation Styles */
+.sticky-sidebar {
+    position: sticky;
+    top: 80px; /* Assuming navbar height is 80px */
+    height: calc(100vh - 80px);
+    width: 260px;
+    overflow-y: auto;
+    background-color: #1F2937; /* Tailwind bg-gray-800 */
+    padding: 20px;
+    border-right: 1px solid #374151; /* Tailwind border-gray-700 */
+}
+
+.main-content-with-sidebar {
+    /* Margin adjustment will be handled by Tailwind classes on the main element for responsiveness */
+    /* Default for larger screens, Tailwind's md:ml-[260px] will handle this logic */
+}
+
+@media (min-width: 768px) { /* md breakpoint */
+    .main-content-with-sidebar {
+        margin-left: 260px; /* Same as sidebar width */
+    }
+}
+
+
+#course-sidebar h4 {
+    font-family: 'Oswald', sans-serif;
+    font-size: 1.25rem; /* Tailwind text-xl */
+    color: #F59E0B; /* Tailwind text-amber-400 */
+    margin-bottom: 1rem;
+}
+
+#sidebar-links ul,
+#sidebar-links li {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+#sidebar-links a {
+    display: block;
+    color: #D1D5DB; /* Tailwind text-gray-300 */
+    text-decoration: none;
+    padding: 8px 0px;
+    font-size: 0.875rem; /* Tailwind text-sm */
+    transition: color 0.2s ease;
+}
+
+#sidebar-links a:hover {
+    color: #F59E0B; /* Tailwind text-amber-400 */
+}
+
+#sidebar-links a.active {
+    color: #F59E0B; /* Tailwind text-amber-400 */
+    font-weight: 600; /* Tailwind font-semibold */
+}
+
+#sidebar-links .module-link {
+    font-weight: 500; /* Tailwind font-medium */
+    padding-top: 0.5rem;
+    padding-bottom: 0.25rem;
+}
+
+#sidebar-links .part-links {
+    margin-left: 15px;
+    padding-left: 10px;
+    border-left: 1px solid #374151; /* Tailwind border-gray-700 */
+}
+
